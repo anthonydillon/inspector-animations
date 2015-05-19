@@ -1,0 +1,302 @@
+/// Import settings
+@import 'global-settings';
+
+%proto-center {
+  margin: 50px auto;
+}
+
+%box {
+  background-color: $white;
+  box-shadow: 0 1px 4.85px .15px rgba(0, 0, 0, .2);
+  padding: 20px;
+}
+
+%notification {
+  padding: 4px 8px;
+  border-radius: 50%;
+  float: right;
+  color: $white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+body {
+  background-color: $light-grey;
+  color: $cool-grey;
+  font-family: Ubuntu;
+  font-weight: 300;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  h1 {
+    font-weight: 300;
+    margin: 0;
+  }
+}
+
+.inner-wrapper {
+  margin: 0 auto;
+  width: $breakpoint-large;
+}
+
+.branding {
+  @extend %box;
+}
+
+.inspector {
+  @extend %proto-center;
+  display: block;
+  height: 500px;
+  width: 300px;
+}
+
+.inspector__switcher {
+  @extend %box;
+  margin-bottom: 10px;
+
+  .inspector__switcher-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .inspector__switcher-list-item {
+    float: left;
+
+    &:after {
+      background-color: $warm-grey;
+      content: '';
+      position: relative;
+      top: 3px;
+      float: left;
+      height: 1em;
+      width: 1px;
+      margin: 0 10px;
+    }
+
+    &:first-of-type:after {
+      display: none;
+    }
+  }
+
+  .inspector__switcher-link--services:link,
+  .inspector__switcher-link--services:visited,
+  .inspector__switcher-link--machines:link,
+  .inspector__switcher-link--machines:visited {
+    color: $cool-grey;
+    text-decoration: none;
+
+    &.is-active {
+      color: $brand-color;
+    }
+  }
+}
+
+.inspector__content {
+  @extend %box;
+  padding: 0;
+  transition: height .2s;
+}
+
+.inspector__mask {
+  overflow: hidden;
+}
+
+.machine-list__list,
+.unit-list__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.machine-list__list-item,
+.unit-list__list-item,
+.unit-list__list-item--image {
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $light-grey;
+
+    .machine-list__controls-list {
+      opacity: 1;
+    }
+  }
+
+
+  .machine-list__image {
+    width: 30px;
+    height: 30px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+  .machine-list__name,
+  .unit-list__name {
+    display: inline;
+    margin-left: 6px;
+  }
+
+  .machine-list__link,
+  .unit-list__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: $cool-grey;
+    text-decoration: none;
+  }
+
+  .machine-list__controls-list {
+    transition: opacity .3s;
+    opacity: 0;
+    position: relative;
+    top: 4px;
+    list-style: none;
+    padding-left: 0;
+    float: right;
+  }
+
+  .machine-list__controls-list-item {
+    display: inline;
+    padding: 0 3px;
+
+    &:hover .machine-list__controls-list-image {
+      fill: $warm-grey;
+    }
+  }
+
+  .machine-list__notify--error,
+  .unit-list__notify--error {
+    @extend %notification;
+    background-color: $error;
+  }
+
+  .machine-list__notify--uncommited,
+  .unit-list__notify--uncommited {
+    @extend %notification;
+    background-color: $uncommited;
+  }
+
+  .machine-list__notify--pending,
+  .unit-list__notify--pending {
+    @extend %notification;
+    background-color: $pending;
+  }
+
+  .unit-list__notify--neutral {
+    float: right;
+  }
+}
+
+.unit-list__list-item {
+  padding: 20px 20px 20px 40px;
+}
+
+.unit-list__list-item-image {
+  transition: fill .3s;
+}
+
+.unit-list__list-item--image {
+  padding: 20px;
+
+  svg {
+    position: relative;
+    top: 2px;
+  }
+
+  &:hover .unit-list__list-item-image {
+    fill: $cool-grey;
+  }
+}
+
+.unit-list__header {
+  padding: 20px;
+  border-bottom: 1px solid $mid-grey;
+
+  .unit-list__header-back {
+    display: inline;
+    vertical-align: middle;
+    text-decoration: none;
+  }
+
+  .unit-list__header-title {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  .unit-list__header-image {
+    position: relative;
+    top: -5px;
+    width: 30px;
+    height: 30px;
+    float: right;
+  }
+}
+
+.unit-list__footer {
+  padding: 20px;
+}
+
+.unit-list__footer-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.unit-list__footer-list-item {
+  width: 49%;
+  display: inline-block;
+}
+
+.unit-list__footer-list-button {
+  transition: background .3s;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: $brand-color;
+  border: 1px solid $mid-grey;
+  background: $white;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Ubuntu;
+
+  &:hover {
+    background-color: $light-grey;
+  }
+}
+
+.unit-list__footer-switch {
+  position: relative;
+  top: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+/// Animations
+
+
+.machine-list {
+  max-height: 3000px;
+}
+
+.unit-list {
+  transition: max-height .8s ease-in;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.inspector__mask:hover {
+  .unit-list {
+    transition: max-height .8s ease-out;
+    max-height: 3000px;
+  }
+
+  .machine-list {
+    max-height: 0;
+    overflow: hidden;
+  }
+}
