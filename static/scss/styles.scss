@@ -34,6 +34,11 @@ body {
     font-weight: 300;
     margin: 0;
   }
+
+  label,
+  input {
+    cursor: pointer;
+  }
 }
 
 .inner-wrapper {
@@ -49,7 +54,7 @@ body {
   @extend %proto-center;
   display: block;
   height: 500px;
-  width: 300px;
+  width: 295px;
 }
 
 .inspector__switcher {
@@ -105,8 +110,15 @@ body {
   overflow: hidden;
 }
 
+.machine-list,
+.unit-list,
+.error-list {
+  display: none;
+}
+
 .machine-list__list,
-.unit-list__list {
+.unit-list__list,
+.error-list__list {
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -114,6 +126,7 @@ body {
 
 .machine-list__list-item,
 .unit-list__list-item,
+.error-list__list-item,
 .unit-list__list-item--image {
   padding: 10px 20px;
 
@@ -124,7 +137,6 @@ body {
       opacity: 1;
     }
   }
-
 
   .machine-list__image {
     width: 30px;
@@ -212,7 +224,7 @@ body {
 }
 
 .unit-list__header {
-  padding: 20px;
+  padding: 15px 20px;
   border-bottom: 1px solid $mid-grey;
 
   .unit-list__header-back {
@@ -235,11 +247,13 @@ body {
   }
 }
 
-.unit-list__footer {
+.unit-list__footer,
+.error-list__footer {
   padding: 20px;
 }
 
-.unit-list__footer-list {
+.unit-list__footer-list,
+.error-list__footer-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -250,7 +264,13 @@ body {
   display: inline-block;
 }
 
-.unit-list__footer-list-button {
+.error-list__footer-list-item {
+  width: 32%;
+  display: inline-block;
+}
+
+.unit-list__footer-list-button,
+.error-list__footer-list-button {
   transition: background .3s;
   text-align: center;
   display: block;
@@ -275,10 +295,62 @@ body {
   cursor: pointer;
 }
 
+/// Error listting
+
+.error-list__header {
+  background-color: $error;
+  padding: 15px 20px;
+  border-bottom: 1px solid $mid-grey;
+  color: $white;
+
+  .error-list__header-back {
+    display: inline;
+    vertical-align: middle;
+    text-decoration: none;
+  }
+
+  .error-list__header-title {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  .error-list__header-count {
+    float: right;
+  }
+}
+
+.error-list__check-box {
+  margin: 10px 5px;
+  border-radius: 4px;
+  -webkit-appearance:button;
+  background-color: $mid-grey;
+  color:#FFF;
+  overflow:hidden;
+  width: 13px;
+  height: 13px;
+  outline: none;
+  box-shadow: inset 0 1px 4.85px .15px rgba(0, 0, 0, .2);
+  vertical-align: middle;
+
+  &:after {
+    content: "✓";
+    position: relative;
+    left: 1px;
+    color: transparent;
+  }
+
+  &:checked {
+    background-color: $brand-color;
+
+    &:after {
+      color: $white;
+    }
+  }
+}
 
 /// Animations
 
-
+/*
 .machine-list {
   max-height: 3000px;
 }
@@ -298,5 +370,27 @@ body {
   .machine-list {
     max-height: 0;
     overflow: hidden;
+  }
+}
+*/
+
+
+/// States
+
+.on__machine-listing {
+  .machine-list {
+    display: block;
+  }
+}
+
+.on__unit-listing {
+  .unit-list {
+    display: block;
+  }
+}
+
+.on__error-listing {
+  .error-list {
+    display: block;
   }
 }

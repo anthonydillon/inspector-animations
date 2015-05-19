@@ -3,8 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Inspector animations</title>
+		<link rel="shortcut icon" href="https://jujucharms.com/static/img/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" media="screen" href="build/css/styles.css" />
 		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic%7CUbuntu+Mono' rel='stylesheet' type='text/css' />
+		<script src="static/js/script.js"></script>
 	</head>
 	<body>
 		<div class="branding">
@@ -15,7 +17,7 @@
 			</div>
 		</div>
 
-		<div class="inspector">
+		<div class="inspector on__error-listing" id="inspector">
 			<nav class="inspector__switcher">
 				<ul class="inspector__switcher-list">
 					<li class="inspector__switcher-list-item">
@@ -187,6 +189,53 @@
 								</li>
 							</ul>
 						</footer>
+					</section>
+
+					<section class="error-list">
+						<header class="error-list__header">
+							<a href="#" class="error-list__header-back">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="6px" height="16px" viewBox="0 0 6 16"><path fillRule="evenodd" class="error-list__header-back-image" d="M 1.29 10.18C 1.84 11.01 2.46 11.86 3.15 12.74 3.84 13.62 4.58 14.48 5.37 15.34 5.58 15.56 5.79 15.78 6 16 6 16 6 13.53 6 13.53 5.57 13.05 5.14 12.54 4.73 12.02 4.25 11.41 3.8 10.79 3.37 10.15 2.95 9.51 2.43 8.61 2.1 8 2.43 7.39 2.95 6.49 3.37 5.85 3.8 5.22 4.25 4.59 4.73 3.98 5.14 3.46 5.57 2.95 6 2.47 6 2.47 6 0 6 0 5.79 0.22 5.58 0.44 5.37 0.67 4.58 1.52 3.84 2.38 3.15 3.26 2.46 4.14 1.84 4.99 1.29 5.82 0.75 6.65 0.32 7.38 0 8 0.32 8.62 0.75 9.35 1.29 10.18" fill="rgb(255,255,255)"/></svg>
+							</a>
+							<p class="error-list__header-title">Errors</p>
+							<span class="error-list__header-count">5</span>
+						</header>
+						<div class="error-list__content">
+							<ul class="error-list__list">
+								<li class="unit-list__list-item--image">
+									<a href="#" class="unit-list__link">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px" viewBox="0 0 16 16"><path fillRule="evenodd" class="unit-list__list-item-image" d="M 14.83 16C 14.83 16 10.17 16 10.17 16 9.53 16 9 15.47 9 14.83 9 14.83 9 10.17 9 10.17 9 9.53 9.53 9 10.17 9 10.17 9 14.83 9 14.83 9 15.47 9 16 9.53 16 10.17 16 10.17 16 14.83 16 14.83 16 15.47 15.47 16 14.83 16ZM 15 10.17C 15 10.07 14.93 10 14.83 10 14.83 10 10.17 10 10.17 10 10.07 10 10 10.07 10 10.17 10 10.17 10 14.83 10 14.83 10 14.93 10.07 15 10.17 15 10.17 15 14.83 15 14.83 15 14.93 15 15 14.93 15 14.83 15 14.83 15 10.17 15 10.17ZM 14.83 7C 14.83 7 10.17 7 10.17 7 9.53 7 9 6.47 9 5.83 9 5.83 9 1.17 9 1.17 9 0.53 9.53 0 10.17 0 10.17 0 14.83 0 14.83 0 15.47 0 16 0.53 16 1.17 16 1.17 16 5.83 16 5.83 16 6.47 15.47 7 14.83 7ZM 15 1.17C 15 1.07 14.93 1 14.83 1 14.83 1 10.17 1 10.17 1 10.07 1 10 1.07 10 1.17 10 1.17 10 5.83 10 5.83 10 5.93 10.07 6 10.17 6 10.17 6 14.83 6 14.83 6 14.93 6 15 5.93 15 5.83 15 5.83 15 1.17 15 1.17ZM 5.83 16C 5.83 16 1.17 16 1.17 16 0.53 16 0 15.47 0 14.83 0 14.83 0 10.17 0 10.17 0 9.53 0.53 9 1.17 9 1.17 9 5.83 9 5.83 9 6.47 9 7 9.53 7 10.17 7 10.17 7 14.83 7 14.83 7 15.47 6.47 16 5.83 16ZM 6 10.17C 6 10.07 5.93 10 5.83 10 5.83 10 1.17 10 1.17 10 1.07 10 1 10.07 1 10.17 1 10.17 1 14.83 1 14.83 1 14.93 1.07 15 1.17 15 1.17 15 5.83 15 5.83 15 5.93 15 6 14.93 6 14.83 6 14.83 6 10.17 6 10.17Z" fill="rgb(147,161,161)"/></svg>
+										<p class="unit-list__name">Start errors</p>
+										<span href="#" class="unit-list__notify--neutral">3</span>
+									</a>
+								</li>
+								<li class="error-list__list-item">
+									<input type="checkbox" name="hdp-hive/1" value="hdp-hive/1" id="hdp-hive-1" class="error-list__check-box">
+									<label for="hdp-hive-1">hdp-hive/1</label>
+								</li>
+								<li class="error-list__list-item">
+									<input type="checkbox" name="hdp-hive/2" value="hdp-hive/2" id="hdp-hive-2" class="error-list__check-box">
+									<label for="hdp-hive-2">hdp-hive/2</label>
+								</li>
+								<li class="error-list__list-item">
+									<input type="checkbox" name="hdp-hive/3" value="hdp-hive/3" id="hdp-hive-3" class="error-list__check-box">
+									<label for="hdp-hive-3">hdp-hive/3</label>
+								</li>
+							</ul>
+						</div>
+						<footer class="error-list__footer">
+							<ul class="error-list__footer-list">
+								<li class="error-list__footer-list-item">
+									<button type="button" class="error-list__footer-list-button">Resolve</button>
+								</li>
+								<li class="error-list__footer-list-item">
+									<button type="button" class="error-list__footer-list-button">Retry</button>
+								</li>
+								<li class="error-list__footer-list-item">
+									<button type="button" class="error-list__footer-list-button">Replace</button>
+								</li>
+							</ul>
+						</footer>
+
 					</section>
 
 				</div>

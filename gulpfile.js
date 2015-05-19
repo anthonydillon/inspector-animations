@@ -30,13 +30,13 @@ gulp.task('help', function() {
 
 gulp.task('sasslint', function() {
     var path = (gutil.env.file)? gutil.env.file : '**/*.scss';
-    return gulp.src('static/' + path)
+    return gulp.src('static/scss/' + path)
         .pipe(scsslint())
         .pipe(scsslint.failReporter());
 });
 
 gulp.task('sass', function() {
-    return gulp.src('static/**/*.scss')
+    return gulp.src('static/scss/**/*.scss')
         .pipe(sass({
             style: 'expanded',
             errLogToConsole: true,
@@ -52,14 +52,14 @@ gulp.task('sass', function() {
 gulp.task('build', ['sasslint', 'sass']);
 
 gulp.task('sass-lite', function() {
-    return gulp.src('static/styles.scss')
+    return gulp.src('static/scss/styles.scss')
         .pipe(sass({ style: 'expanded', errLogToConsole: true }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(gulp.dest('build/css/'));
 });
 
 gulp.task('watch', function() {
-    gulp.watch('static/**/*.scss', ['sass-lite']);
+    gulp.watch('static/scss/**/*.scss', ['sass-lite']);
 });
 
 gulp.task('test', ['sasslint']);
