@@ -1,43 +1,27 @@
-/// Import settings
+/// Config settings
 @import 'global-settings';
+
+/// The basic element styling
 @import 'modules/core';
+
+/// Generic inspector styles
 @import 'modules/inspector';
+
+/// Inspector services/machine switcher
 @import 'modules/switcher';
 
 /// Inspector listing
-@import 'module/inspector-list';
+@import 'modules/inspector-list';
+
+/// Machine listing
+@import 'modules/machine-list';
 
 /// Unit listing
-@import 'module/unit-list';
+@import 'modules/unit-list';
 
 /// Error listing
 @import 'modules/error-list';
 
-/// Animations
-/*
-.machine-list {
-  max-height: 3000px;
-}
-
-.unit-list {
-  transition: max-height .8s ease-in;
-  max-height: 0;
-  overflow: hidden;
-}
-
-.inspector__mask:hover {
-  .unit-list {
-    transition: max-height .8s ease-out;
-    max-height: 3000px;
-  }
-
-  .machine-list {
-    max-height: 0;
-    overflow: hidden;
-  }
-}
-*/
-
-
 /// States
 @import 'states';
+

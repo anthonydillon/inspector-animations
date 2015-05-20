@@ -10,7 +10,7 @@
 }
 
 .inspector-list__list-item,
-.inspector-list__list-item--image {
+.inspector-list__list-item--tabbed {
   padding: 10px 20px;
 
   &:hover {
@@ -67,7 +67,7 @@
 
   .inspector-list__notify--uncommited {
     @extend %notification;
-    background-color: $uncommited;
+    background-color: $uncommitted;
   }
 
   .inspector-list__notify--pending {
@@ -81,14 +81,6 @@
 }
 
 .inspector-list__list-item {
-  padding: 20px 20px 20px 40px;
-}
-
-.inspector-list__list-item-image {
-  transition: fill .3s;
-}
-
-.inspector-list__list-item--image {
   padding: 20px;
 
   svg {
@@ -99,6 +91,14 @@
   &:hover .inspector-list__list-item-image {
     fill: $cool-grey;
   }
+}
+
+.inspector-list__list-item-image {
+  transition: fill .3s;
+}
+
+.inspector-list__list-item--tabbed {
+  padding: 20px 20px 20px 40px;
 }
 
 .inspector-list__header {
@@ -126,7 +126,7 @@
 }
 
 .inspector-list__footer {
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .inspector-list__footer-list {

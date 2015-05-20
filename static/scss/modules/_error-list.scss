@@ -1,4 +1,6 @@
-.error-list {
+.error-list,
+.pending-list,
+.uncommitted-list {
   .inspector-list__header {
     background-color: $error;
     padding: 15px 20px;
@@ -36,8 +38,10 @@
 
     &:after {
       content: "✓";
+      font-size: 12px;
       position: relative;
-      left: 1px;
+      left: 2px;
+      top: -1px;
       color: transparent;
     }
 
@@ -54,4 +58,12 @@
     width: 32%;
     display: inline-block;
   }
+}
+
+.pending-list .inspector-list__header {
+  background-color: $pending;
+}
+
+.uncommitted-list .inspector-list__header {
+  background-color: $uncommitted;
 }
