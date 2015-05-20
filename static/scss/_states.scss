@@ -1,3 +1,8 @@
+
+.inspector-list {
+  display: none;
+}
+
 .on__machine-listing {
   .machine-list {
     display: block;
@@ -28,3 +33,54 @@
   }
 }
 
+
+/// State animations
+/// Fade in
+$fadeInDuration: 0.2s;
+$fadeInStaggerSpeed: 0.03s;
+
+.animation--fade-in {
+  .inspector-list__list-item,
+  .inspector-list__list-item--tabbed {
+    opacity: 0;
+  }
+
+  @for $i from 1 through 9 {
+    .inspector-list__list li:nth-child(#{$i}){
+      -webkit-animation-delay: $fadeInStaggerSpeed * $i;
+    }
+  }
+
+  .machine-list{
+    .inspector-list__list-item {
+      opacity: 1;
+    }
+  }
+
+  .on__unit-listing,
+  .on__error-listing {
+    .inspector-list__list-item,
+    .inspector-list__list-item--tabbed {
+      -webkit-animation-duration: $fadeInDuration;
+      -webkit-animation-name: fadeIn;
+      -webkit-animation-fill-mode: forwards;
+    }
+  }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}

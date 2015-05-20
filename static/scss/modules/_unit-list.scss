@@ -4,4 +4,11 @@
     width: 49%;
     display: inline-block;
   }
+
+  .inspector-list__notify--error,
+  .inspector-list__notify--pending,
+  .inspector-list__notify--uncommitted {
+    position: relative;
+    top: -5px;
+  }
 }

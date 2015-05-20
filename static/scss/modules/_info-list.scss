@@ -58,6 +58,11 @@
     width: 32%;
     display: inline-block;
   }
+
+  .inspector-list__notify--error {
+    position: relative;
+    top: -5px;
+  }
 }
 
 .pending-list .inspector-list__header {
