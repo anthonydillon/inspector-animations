@@ -1,0 +1,57 @@
+.error-list {
+  .inspector-list__header {
+    background-color: $error;
+    padding: 15px 20px;
+    border-bottom: 1px solid $mid-grey;
+    color: $white;
+
+    .inspector-list__header-back {
+      display: inline;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
+    .inspector-list__header-title {
+      display: inline;
+      margin-left: 10px;
+    }
+
+    .inspector-list__header-count {
+      float: right;
+    }
+  }
+
+  .inspector-list__check-box {
+    margin: 10px 5px;
+    border-radius: 4px;
+    -webkit-appearance:button;
+    background-color: $mid-grey;
+    color:#FFF;
+    overflow:hidden;
+    width: 13px;
+    height: 13px;
+    outline: none;
+    box-shadow: inset 0 1px 4.85px .15px rgba(0, 0, 0, .2);
+    vertical-align: middle;
+
+    &:after {
+      content: "✓";
+      position: relative;
+      left: 1px;
+      color: transparent;
+    }
+
+    &:checked {
+      background-color: $brand-color;
+
+      &:after {
+        color: $white;
+      }
+    }
+  }
+
+  .inspector-list__footer-list-item {
+    width: 32%;
+    display: inline-block;
+  }
+}

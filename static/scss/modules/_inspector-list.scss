@@ -1,0 +1,162 @@
+
+.inspector-list {
+  display: none;
+}
+
+.inspector-list__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.inspector-list__list-item,
+.inspector-list__list-item--image {
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $light-grey;
+
+    .machine-list__controls-list {
+      opacity: 1;
+    }
+  }
+
+  .inspector-list__image {
+    width: 30px;
+    height: 30px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+  .inspector-list__name {
+    display: inline;
+    margin-left: 6px;
+  }
+
+  .inspector-list__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: $cool-grey;
+    text-decoration: none;
+  }
+
+  .inspector-list__controls-list {
+    transition: opacity .3s;
+    opacity: 0;
+    position: relative;
+    top: 4px;
+    list-style: none;
+    padding-left: 0;
+    float: right;
+  }
+
+  .inspector-list__controls-list-item {
+    display: inline;
+    padding: 0 3px;
+
+    &:hover .inspector-list__controls-list-image {
+      fill: $warm-grey;
+    }
+  }
+
+  .inspector-list__notify--error {
+    @extend %notification;
+    background-color: $error;
+  }
+
+  .inspector-list__notify--uncommited {
+    @extend %notification;
+    background-color: $uncommited;
+  }
+
+  .inspector-list__notify--pending {
+    @extend %notification;
+    background-color: $pending;
+  }
+
+  .inspector-list__notify--neutral {
+    float: right;
+  }
+}
+
+.inspector-list__list-item {
+  padding: 20px 20px 20px 40px;
+}
+
+.inspector-list__list-item-image {
+  transition: fill .3s;
+}
+
+.inspector-list__list-item--image {
+  padding: 20px;
+
+  svg {
+    position: relative;
+    top: 2px;
+  }
+
+  &:hover .inspector-list__list-item-image {
+    fill: $cool-grey;
+  }
+}
+
+.inspector-list__header {
+  padding: 15px 20px;
+  border-bottom: 1px solid $mid-grey;
+
+  .inspector-list__header-back {
+    display: inline;
+    vertical-align: middle;
+    text-decoration: none;
+  }
+
+  .inspector-list__header-title {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  .inspector-list__header-image {
+    position: relative;
+    top: -5px;
+    width: 30px;
+    height: 30px;
+    float: right;
+  }
+}
+
+.inspector-list__footer {
+  padding: 20px;
+}
+
+.inspector-list__footer-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+
+.inspector-list__footer-list-button {
+  transition: background .3s;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: $brand-color;
+  border: 1px solid $mid-grey;
+  background: $white;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Ubuntu;
+
+  &:hover {
+    background-color: $light-grey;
+  }
+}
+
+.inspector-list__footer-switch {
+  position: relative;
+  top: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}

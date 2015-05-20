@@ -1,0 +1,43 @@
+
+.inspector__switcher {
+  @extend %box;
+  margin-bottom: 10px;
+
+  .inspector__switcher-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .inspector__switcher-list-item {
+    float: left;
+
+    &:after {
+      background-color: $warm-grey;
+      content: '';
+      position: relative;
+      top: 3px;
+      float: left;
+      height: 1em;
+      width: 1px;
+      margin: 0 10px;
+    }
+
+    &:first-of-type:after {
+      display: none;
+    }
+  }
+
+  .inspector__switcher-link--services:link,
+  .inspector__switcher-link--services:visited,
+  .inspector__switcher-link--machines:link,
+  .inspector__switcher-link--machines:visited {
+    color: $cool-grey;
+    text-decoration: none;
+
+    &.is-active {
+      color: $brand-color;
+    }
+  }
+}

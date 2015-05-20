@@ -1,0 +1,40 @@
+
+%proto-center {
+  margin: 50px auto;
+}
+
+%box {
+  background-color: $white;
+  box-shadow: 0 1px 4.85px .15px rgba(0, 0, 0, .2);
+  padding: 20px;
+}
+
+%notification {
+  padding: 4px 8px;
+  border-radius: 50%;
+  float: right;
+  color: $white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+body {
+  background-color: $light-grey;
+  color: $cool-grey;
+  font-family: Ubuntu;
+  font-weight: 300;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  h1 {
+    font-weight: 300;
+    margin: 0;
+  }
+
+  label,
+  input {
+    cursor: pointer;
+  }
+}

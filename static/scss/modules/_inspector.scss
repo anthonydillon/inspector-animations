@@ -1,0 +1,26 @@
+
+.inner-wrapper {
+  margin: 0 auto;
+  width: $breakpoint-large;
+}
+
+.branding {
+  @extend %box;
+}
+
+.inspector {
+  @extend %proto-center;
+  display: block;
+  height: 500px;
+  width: 295px;
+}
+
+.inspector__content {
+  @extend %box;
+  padding: 0;
+  transition: height .2s;
+}
+
+.inspector__mask {
+  overflow: hidden;
+}
