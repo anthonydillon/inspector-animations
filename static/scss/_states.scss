@@ -36,19 +36,32 @@
 
 /// State animations
 /// Fade in
-$fadeInDuration: 0.2s;
-$fadeInStaggerSpeed: 0.03s;
+
+$stagger: true; // Adds a small delay concurrently down the list
+
+$fadeInDuration: 0.2s; // The time taken from opacity 0 to 1
+$fadeInStaggerSpeed: 0.03s; // Delay before the next item starts to fade in
+
+$slideInDuration: 0.2s; // The time taken from slide in
+$slideInStaggerSpeed: 0.03s; // Delay before the next item starts to slide in
+$slideInDistance: -300px; // Offset position to start transition
+
+$slideUpDuration: 0.2s; // The time taken from slide in
+$slideUpStaggerSpeed: 0.03s; // Delay before the next item starts to slide in
+$slideUpDistance: 30px; // Offset position to start transition
+
+.animation--stagger {
+  @for $i from 1 through 9 {
+    .inspector-list__list li:nth-child(#{$i}) {
+      animation-delay: $slideInStaggerSpeed * $i;
+    }
+  }
+}
 
 .animation--fade-in {
   .inspector-list__list-item,
   .inspector-list__list-item--tabbed {
     opacity: 0;
-  }
-
-  @for $i from 1 through 9 {
-    .inspector-list__list li:nth-child(#{$i}){
-      -webkit-animation-delay: $fadeInStaggerSpeed * $i;
-    }
   }
 
   .machine-list{
@@ -58,17 +71,124 @@ $fadeInStaggerSpeed: 0.03s;
   }
 
   .on__unit-listing,
-  .on__error-listing {
+  .on__error-listing,
+  .on__pending-listing,
+  .on__uncommitted-listing {
     .inspector-list__list-item,
     .inspector-list__list-item--tabbed {
-      -webkit-animation-duration: $fadeInDuration;
-      -webkit-animation-name: fadeIn;
-      -webkit-animation-fill-mode: forwards;
+      animation-duration: $fadeInDuration;
+      animation-name: fadeIn;
+      animation-fill-mode: forwards;
     }
   }
 }
 
-@-webkit-keyframes fadeIn {
+/// Slide in
+.animation--slide-in {
+  .inspector-list__list-item,
+  .inspector-list__list-item--tabbed {
+    transform: translateX($slideInDistance);
+    opacity: 0;
+  }
+
+  .machine-list{
+    .inspector-list__list-item {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .on__unit-listing,
+  .on__error-listing,
+  .on__pending-listing,
+  .on__uncommitted-listing {
+    .inspector-list__list-item,
+    .inspector-list__list-item--tabbed {
+      animation-duration: $slideInDuration;
+      animation-name: slideIn;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+
+/// Slide up
+.animation--slide-up {
+  .inspector-list__list-item,
+  .inspector-list__list-item--tabbed {
+    transform: translateY($slideUpDistance);
+    opacity: 0;
+  }
+
+  .machine-list{
+    .inspector-list__list-item {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .on__unit-listing,
+  .on__error-listing,
+  .on__pending-listing,
+  .on__uncommitted-listing {
+    .inspector-list__list-item,
+    .inspector-list__list-item--tabbed {
+      animation-duration: $slideUpDuration;
+      animation-name: slideUp;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes slideIn {
+    0% {
+        display: none;
+        opacity: 0;
+        transform: translateX($slideInDistance);
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+        transform: translateX($slideInDistance);
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        display: block;
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        display: none;
+        opacity: 0;
+        transform: translateY($slideUpDistance);
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+        transform: translateY($slideUpDistance);
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
     0% {
         display: none;
         opacity: 0;
@@ -84,3 +204,5 @@ $fadeInStaggerSpeed: 0.03s;
         opacity: 1;
     }
 }
+
+

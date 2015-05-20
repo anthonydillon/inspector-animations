@@ -8,12 +8,22 @@
 		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic%7CUbuntu+Mono' rel='stylesheet' type='text/css' />
 		<script src="static/js/script.js"></script>
 	</head>
-	<body class="animation--fade-in">
+	<body >
 		<div class="branding">
 			<div class="inner-wrapper">
 				<h1 class="branding__title">
 					Juju: Inspector animations
 				</h1>
+				<div class="animation-tweaker">
+					<select class="animation-switcher" id="animation-switcher">
+						<option value="">No animation</option>
+						<option value="animation--fade-in">Fade in</option>
+						<option value="animation--slide-in">Slide in</option>
+						<option value="animation--slide-up">Slide up</option>
+					</select>
+					<input type="checkbox" name="animation-stagger" value="animation-stagger" id="animation-stagger" class="stagger-animation__check-box">
+					<label for="animation-stagger">Stagger animation</label>
+				</div>
 			</div>
 		</div>
 

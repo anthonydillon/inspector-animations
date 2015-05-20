@@ -1,12 +1,15 @@
 
 // When the page loads this sets up the basic behaviour
 function init() {
-	var inspector = document.getElementById("inspector"),
+	var animationStaggered = false,
+		inspector = document.getElementById("inspector"),
 		toUnitList = document.getElementsByClassName("js__to--unit-list"),
 		toMachineList = document.getElementsByClassName("js__to--machine-list"),
 		toPendingList = document.getElementsByClassName("js__to--pending-list"),
 		toUncommitedList = document.getElementsByClassName("js__to--uncommited-list"),
-		toErrorList = document.getElementsByClassName("js__to--error-list");
+		toErrorList = document.getElementsByClassName("js__to--error-list"),
+		animationSwitcher = document.getElementById("animation-switcher"),
+		animationStagger = document.getElementById("animation-stagger");
 
 	// Change the state class on the inspector to unit-listing
 	var showUnitList = function(e) {
@@ -37,6 +40,28 @@ function init() {
 		e.preventDefault();
 		inspector.className = 'inspector on__uncommitted-listing';
 	};
+
+	var changeAnimation = function (e) {
+		if (animationStaggered) {
+			document.body.className = e.target.value + ' animation--stagger';
+		} else {
+			document.body.className = e.target.value;
+		}
+	};
+
+	var staggerAnimation = function (e) {
+		if (e.target.checked) {
+			animationStaggered = true;
+			document.body.className = document.body.className + ' animation--stagger';
+		} else {
+			animationStaggered = false;
+			document.body.className = document.body.className.replace('animation--stagger', '');
+		}
+		//document.body.className = e.target.value;
+	};
+
+	animationSwitcher.addEventListener('change', changeAnimation, false);
+	animationStagger.addEventListener('change', staggerAnimation, false);
 
 	for (var i = 0; i < toUnitList.length; i++) {
 	    toUnitList[i].addEventListener('click', showUnitList, false);

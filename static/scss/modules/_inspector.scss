@@ -6,6 +6,53 @@
 
 .branding {
   @extend %box;
+
+  .animation-tweaker {
+    float: right;
+    position: relative;
+    top: -40px;
+  }
+
+  .animation-switcher {
+    display: block;
+    outline: none;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: 300;
+    border: 0;
+    background: 0;
+  }
+
+  .stagger-animation__check-box {
+    margin: 10px 5px;
+    border-radius: 4px;
+    -webkit-appearance:button;
+    background-color: $mid-grey;
+    color:#FFF;
+    overflow:hidden;
+    width: 13px;
+    height: 13px;
+    outline: none;
+    box-shadow: inset 0 1px 4.85px .15px rgba(0, 0, 0, .2);
+    vertical-align: middle;
+
+    &:after {
+      content: "✓";
+      font-size: 12px;
+      position: relative;
+      left: 2px;
+      top: -1px;
+      color: transparent;
+    }
+
+    &:checked {
+      background-color: $brand-color;
+
+      &:after {
+        color: $white;
+      }
+    }
+  }
 }
 
 .inspector {
