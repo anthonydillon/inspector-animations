@@ -1,6 +1,6 @@
 # Inspector animations
 
-A prototype example of the animations between states in the Juju inspector. 
+A prototype example of the animations between states in the Juju inspector.
 
 ## Local usage
 
@@ -8,5 +8,7 @@ A prototype example of the animations between states in the Juju inspector.
 
 2. Run `npm install`
 
-3. Run `gulp watch`
+3. Run `gulp sass`
+
+4. Then open the `index.html` file in your browser
 
