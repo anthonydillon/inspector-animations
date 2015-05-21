@@ -84,8 +84,15 @@
     top: 2px;
   }
 
-  &:hover .inspector-list__list-item-image {
-    fill: $cool-grey;
+  &:hover {
+
+    .inspector-list__controls-list {
+      opacity: 1;
+    }
+
+    .inspector-list__list-item-image {
+      fill: $cool-grey;
+    }
   }
 }
 

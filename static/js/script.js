@@ -14,7 +14,11 @@ function init() {
 	// Change the state class on the inspector to unit-listing
 	var showUnitList = function(e) {
 		e.preventDefault();
-		inspector.className = 'inspector on__unit-listing';
+		if (e.target.className === 'inspector-list__notify--error') {
+			inspector.className = 'inspector on__error-listing';
+		} else {
+			inspector.className = 'inspector on__unit-listing';
+		}
 	};
 
 	// Change the state class on the inspector to machine-listing
