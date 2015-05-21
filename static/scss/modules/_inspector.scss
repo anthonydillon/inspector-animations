@@ -1,16 +1,23 @@
 
 .inner-wrapper {
   margin: 0 auto;
-  width: $breakpoint-large;
+  max-width: $breakpoint-large;
 }
 
 .branding {
   @extend %box;
 
   .animation-tweaker {
-    float: right;
-    position: relative;
-    top: -40px;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 600px) {
+    .animation-tweaker {
+      margin-top: 0;
+      float: right;
+      position: relative;
+      top: -40px;
+    }
   }
 
   .animation-switcher {
