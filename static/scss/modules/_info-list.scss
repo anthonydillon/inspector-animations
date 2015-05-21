@@ -1,8 +1,8 @@
+
 .error-list,
 .pending-list,
 .uncommitted-list {
   .inspector-list__header {
-    background-color: $error;
     padding: 15px 20px;
     border-bottom: 1px solid $mid-grey;
     color: $white;
@@ -12,6 +12,7 @@
       vertical-align: middle;
       text-decoration: none;
     }
+
 
     .inspector-list__header-title {
       display: inline;
@@ -26,10 +27,10 @@
   .inspector-list__check-box {
     margin: 10px 5px;
     border-radius: 4px;
-    -webkit-appearance:button;
+    appearance: button;
     background-color: $mid-grey;
-    color:#FFF;
-    overflow:hidden;
+    color: $white;
+    overflow: hidden;
     width: 13px;
     height: 13px;
     outline: none;
@@ -37,7 +38,7 @@
     vertical-align: middle;
 
     &:after {
-      content: "✓";
+      content: '✓';
       font-size: 12px;
       position: relative;
       left: 2px;
@@ -47,10 +48,10 @@
 
     &:checked {
       background-color: $brand-color;
+    }
 
-      &:after {
-        color: $white;
-      }
+    &:checked:after {
+      color: $white;
     }
   }
 
@@ -65,10 +66,50 @@
   }
 }
 
+.error-list .inspector-list__header {
+  animation-duration: .2s;
+  animation-name: colorFadeInError;
+  animation-fill-mode: forwards;
+}
+
 .pending-list .inspector-list__header {
-  background-color: $pending;
+  animation-duration: .2s;
+  animation-name: colorFadeInPending;
+  animation-fill-mode: forwards;
 }
 
 .uncommitted-list .inspector-list__header {
-  background-color: $uncommitted;
+  animation-duration: .2s;
+  animation-name: colorFadeInUncommitted;
+  animation-fill-mode: forwards;
+}
+
+@keyframes colorFadeInError {
+  0% {
+    background-color: lighten($error, 40%);
+  }
+
+  100% {
+    background-color: $error;
+  }
+}
+
+@keyframes colorFadeInPending {
+  0% {
+    background-color: lighten($pending, 40%);
+  }
+
+  100% {
+    background-color: $pending;
+  }
+}
+
+@keyframes colorFadeInUncommitted {
+  0% {
+    background-color: lighten($uncommitted, 40%);
+  }
+
+  100% {
+    background-color: $uncommitted;
+  }
 }

@@ -39,21 +39,21 @@
 
 $stagger: true; // Adds a small delay concurrently down the list
 
-$fadeInDuration: 0.2s; // The time taken from opacity 0 to 1
-$fadeInStaggerSpeed: 0.03s; // Delay before the next item starts to fade in
+$fade-in-duration: .2s; // The time taken from opacity 0 to 1
+$fade-in-stagger-speed: .03s; // Delay before the next item starts to fade in
 
-$slideInDuration: 0.2s; // The time taken from slide in
-$slideInStaggerSpeed: 0.03s; // Delay before the next item starts to slide in
-$slideInDistance: -300px; // Offset position to start transition
+$slide-in-duration: .2s; // The time taken from slide in
+$slide-in-stagger-speed: .03s; // Delay before the next item starts to slide in
+$slide-in-distance: -300px; // Offset position to start transition
 
-$slideUpDuration: 0.2s; // The time taken from slide in
-$slideUpStaggerSpeed: 0.03s; // Delay before the next item starts to slide in
-$slideUpDistance: 30px; // Offset position to start transition
+$slide-up-duration: .2s; // The time taken from slide in
+$slide-up-stagger-speed: .03s; // Delay before the next item starts to slide in
+$slide-up-distance: 30px; // Offset position to start transition
 
 .animation--stagger {
   @for $i from 1 through 9 {
     .inspector-list__list li:nth-child(#{$i}) {
-      animation-delay: $slideInStaggerSpeed * $i;
+      animation-delay: $slide-in-stagger-speed * $i;
     }
   }
 }
@@ -64,7 +64,7 @@ $slideUpDistance: 30px; // Offset position to start transition
     opacity: 0;
   }
 
-  .machine-list{
+  .machine-list {
     .inspector-list__list-item {
       opacity: 1;
     }
@@ -76,7 +76,7 @@ $slideUpDistance: 30px; // Offset position to start transition
   .on__uncommitted-listing {
     .inspector-list__list-item,
     .inspector-list__list-item--tabbed {
-      animation-duration: $fadeInDuration;
+      animation-duration: $fade-in-duration;
       animation-name: fadeIn;
       animation-fill-mode: forwards;
     }
@@ -87,11 +87,11 @@ $slideUpDistance: 30px; // Offset position to start transition
 .animation--slide-in {
   .inspector-list__list-item,
   .inspector-list__list-item--tabbed {
-    transform: translateX($slideInDistance);
+    transform: translateX($slide-in-distance);
     opacity: 0;
   }
 
-  .machine-list{
+  .machine-list {
     .inspector-list__list-item {
       transform: translateX(0);
       opacity: 1;
@@ -104,7 +104,7 @@ $slideUpDistance: 30px; // Offset position to start transition
   .on__uncommitted-listing {
     .inspector-list__list-item,
     .inspector-list__list-item--tabbed {
-      animation-duration: $slideInDuration;
+      animation-duration: $slide-in-duration;
       animation-name: slideIn;
       animation-fill-mode: forwards;
     }
@@ -116,11 +116,11 @@ $slideUpDistance: 30px; // Offset position to start transition
 .animation--slide-up {
   .inspector-list__list-item,
   .inspector-list__list-item--tabbed {
-    transform: translateY($slideUpDistance);
+    transform: translateY($slide-up-distance);
     opacity: 0;
   }
 
-  .machine-list{
+  .machine-list {
     .inspector-list__list-item {
       transform: translateY(0);
       opacity: 1;
@@ -133,7 +133,7 @@ $slideUpDistance: 30px; // Offset position to start transition
   .on__uncommitted-listing {
     .inspector-list__list-item,
     .inspector-list__list-item--tabbed {
-      animation-duration: $slideUpDuration;
+      animation-duration: $slide-up-duration;
       animation-name: slideUp;
       animation-fill-mode: forwards;
     }
@@ -141,68 +141,68 @@ $slideUpDistance: 30px; // Offset position to start transition
 }
 
 @keyframes slideIn {
-    0% {
-        display: none;
-        opacity: 0;
-        transform: translateX($slideInDistance);
-    }
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateX($slide-in-distance);
+  }
 
-    1% {
-        display: block;
-        opacity: 0;
-        transform: translateX($slideInDistance);
-    }
+  1% {
+    display: block;
+    opacity: 0;
+    transform: translateX($slide-in-distance);
+  }
 
-    25% {
-        opacity: 1;
-    }
+  25% {
+    opacity: 1;
+  }
 
-    100% {
-        display: block;
-        transform: translateX(0);
-        opacity: 1;
-    }
+  100% {
+    display: block;
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-    0% {
-        display: none;
-        opacity: 0;
-        transform: translateY($slideUpDistance);
-    }
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY($slide-up-distance);
+  }
 
-    1% {
-        display: block;
-        opacity: 0;
-        transform: translateY($slideUpDistance);
-    }
+  1% {
+    display: block;
+    opacity: 0;
+    transform: translateY($slide-up-distance);
+  }
 
-    25% {
-        opacity: 1;
-    }
+  25% {
+    opacity: 1;
+  }
 
-    100% {
-        display: block;
-        transform: translateY(0);
-        opacity: 1;
-    }
+  100% {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-    0% {
-        display: none;
-        opacity: 0;
-    }
+  0% {
+    display: none;
+    opacity: 0;
+  }
 
-    1% {
-        display: block;
-        opacity: 0;
-    }
+  1% {
+    display: block;
+    opacity: 0;
+  }
 
-    100% {
-        display: block;
-        opacity: 1;
-    }
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }
 
 
