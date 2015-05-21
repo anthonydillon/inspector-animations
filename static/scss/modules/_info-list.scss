@@ -29,7 +29,7 @@
   .inspector-list__check-box {
     margin: 10px 5px;
     border-radius: 4px;
-    appearance: button;
+    -webkit-appearance: button;
     background-color: $mid-grey;
     color: $white;
     overflow: hidden;

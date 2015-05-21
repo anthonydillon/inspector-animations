@@ -5,6 +5,7 @@ function init() {
 		inspector = document.getElementById("inspector"),
 		toUnitList = document.getElementsByClassName("js__to--unit-list"),
 		toUnitListBack = document.getElementsByClassName("js__to--unit-list-back"),
+		toMachineListBack = document.getElementsByClassName("js__to--machine-list-back"),
 		toMachineList = document.getElementsByClassName("js__to--machine-list"),
 		toPendingList = document.getElementsByClassName("js__to--pending-list"),
 		toUncommitedList = document.getElementsByClassName("js__to--uncommited-list"),
@@ -46,6 +47,18 @@ function init() {
 		e.preventDefault();
 		inspector.className = 'inspector on__machine-listing';
 	};
+
+	var showMachineListBack = function (e) {
+		e.preventDefault();
+		if (document.body.className.includes('animation--slide-in')) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-out animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-out';
+			}
+		}
+		inspector.className = 'inspector on__machine-listing';
+	}
 
 	// Change the state class on the inspector to error-listing
 	var showErrorList = function (e) {
@@ -96,6 +109,10 @@ function init() {
 
 	for (var i = 0; i < toMachineList.length; i++) {
 	    toMachineList[i].addEventListener('click', showMachineList, false);
+	}
+
+	for (var i = 0; i < toMachineListBack.length; i++) {
+	    toMachineListBack[i].addEventListener('click', showMachineListBack, false);
 	}
 
 	for (var i = 0; i < toErrorList.length; i++) {

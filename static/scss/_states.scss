@@ -3,36 +3,51 @@
   display: none;
 }
 
-.on__machine-listing {
-  .machine-list {
-    display: block;
-  }
+.on__machine-listing .machine-list {
+  display: block;
 }
 
-.on__unit-listing {
-  .unit-list {
-    display: block;
-  }
+.on__unit-listing .unit-list {
+  display: block;
 }
 
-.on__error-listing {
-  .error-list {
-    display: block;
-  }
+.on__error-listing .error-list {
+  display: block;
 }
 
-.on__uncommitted-listing {
-  .uncommitted-list {
-    display: block;
-  }
+.on__uncommitted-listing .uncommitted-list {
+  display: block;
 }
 
-.on__pending-listing {
-  .pending-list {
-    display: block;
-  }
+.on__pending-listing .pending-list {
+  display: block;
 }
 
+
+.animation--fade-in,
+.animation--slide-in,
+.animation--slide-out,
+.animation--slide-up {
+  .on__machine-listing .inspector__content {
+    height: 270px;
+  }
+
+  .on__unit-listing .inspector__content {
+    height: 582px;
+  }
+
+  .on__error-listing .inspector__content {
+    height: 386px;
+  }
+
+  .on__uncommitted-listing .inspector__content {
+    height: 255px;
+  }
+
+  .on__pending-listing .inspector__content {
+    height: 255px;
+  }
+}
 
 /// State animations
 /// Fade in
@@ -60,22 +75,19 @@ $slide-up-distance: 30px; // Offset position to start transition
 
 .animation--fade-in {
   .inspector-list__list-item,
-  .inspector-list__list-item--tabbed {
+  .inspector-list__list-item--tabbed,
+  .inspector-list__footer {
     opacity: 0;
   }
 
-  .machine-list {
-    .inspector-list__list-item {
-      opacity: 1;
-    }
-  }
-
   .on__unit-listing,
+  .on__machine-listing,
   .on__error-listing,
   .on__pending-listing,
   .on__uncommitted-listing {
     .inspector-list__list-item,
-    .inspector-list__list-item--tabbed {
+    .inspector-list__list-item--tabbed,
+    .inspector-list__footer {
       animation-duration: $fade-in-duration;
       animation-name: fadeIn;
       animation-fill-mode: forwards;
@@ -87,22 +99,20 @@ $slide-up-distance: 30px; // Offset position to start transition
 .animation--slide-in,
 .animation--slide-out {
   .inspector-list__list-item,
-  .inspector-list__list-item--tabbed {
+  .inspector-list__list-item--tabbed,
+  .inspector-list__footer {
     transform: translateX($slide-in-distance);
     opacity: 0;
   }
 
-  .machine-list .inspector-list__list-item {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
   .on__unit-listing,
   .on__error-listing,
+  .on__machine-listing,
   .on__pending-listing,
   .on__uncommitted-listing {
     .inspector-list__list-item,
-    .inspector-list__list-item--tabbed {
+    .inspector-list__list-item--tabbed,
+    .inspector-list__footer {
       animation-duration: $slide-in-duration;
       animation-name: slideIn;
       animation-fill-mode: forwards;
@@ -113,10 +123,12 @@ $slide-up-distance: 30px; // Offset position to start transition
 .animation--slide-out {
   .on__unit-listing,
   .on__error-listing,
+  .on__machine-listing,
   .on__pending-listing,
   .on__uncommitted-listing {
     .inspector-list__list-item,
-    .inspector-list__list-item--tabbed {
+    .inspector-list__list-item--tabbed,
+    .inspector-list__footer {
       animation-name: slideOut;
     }
   }
@@ -126,24 +138,20 @@ $slide-up-distance: 30px; // Offset position to start transition
 /// Slide up
 .animation--slide-up {
   .inspector-list__list-item,
-  .inspector-list__list-item--tabbed {
+  .inspector-list__list-item--tabbed,
+  .inspector-list__footer {
     transform: translateY($slide-up-distance);
     opacity: 0;
-  }
-
-  .machine-list {
-    .inspector-list__list-item {
-      transform: translateY(0);
-      opacity: 1;
-    }
   }
 
   .on__unit-listing,
   .on__error-listing,
   .on__pending-listing,
+  .on__machine-listing,
   .on__uncommitted-listing {
     .inspector-list__list-item,
-    .inspector-list__list-item--tabbed {
+    .inspector-list__list-item--tabbed,
+    .inspector-list__footer {
       animation-duration: $slide-up-duration;
       animation-name: slideUp;
       animation-fill-mode: forwards;
@@ -240,5 +248,6 @@ $slide-up-distance: 30px; // Offset position to start transition
     opacity: 1;
   }
 }
+
 
 
