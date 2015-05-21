@@ -33,10 +33,10 @@
   .stagger-animation__check-box {
     margin: 10px 5px;
     border-radius: 4px;
-    -webkit-appearance:button;
+    appearance: button;
     background-color: $mid-grey;
-    color:#FFF;
-    overflow:hidden;
+    color: $white;
+    overflow: hidden;
     width: 13px;
     height: 13px;
     outline: none;
@@ -44,7 +44,7 @@
     vertical-align: middle;
 
     &:after {
-      content: "✓";
+      content: '✓';
       font-size: 12px;
       position: relative;
       left: 2px;
@@ -54,10 +54,10 @@
 
     &:checked {
       background-color: $brand-color;
+    }
 
-      &:after {
-        color: $white;
-      }
+    &:checked:after {
+      color: $white;
     }
   }
 }

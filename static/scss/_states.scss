@@ -44,7 +44,7 @@ $fade-in-stagger-speed: .03s; // Delay before the next item starts to fade in
 
 $slide-in-duration: .2s; // The time taken from slide in
 $slide-in-stagger-speed: .03s; // Delay before the next item starts to slide in
-$slide-in-distance: -300px; // Offset position to start transition
+$slide-in-distance: 300px; // Offset position to start transition
 
 $slide-up-duration: .2s; // The time taken from slide in
 $slide-up-stagger-speed: .03s; // Delay before the next item starts to slide in
@@ -84,18 +84,17 @@ $slide-up-distance: 30px; // Offset position to start transition
 }
 
 /// Slide in
-.animation--slide-in {
+.animation--slide-in,
+.animation--slide-out {
   .inspector-list__list-item,
   .inspector-list__list-item--tabbed {
     transform: translateX($slide-in-distance);
     opacity: 0;
   }
 
-  .machine-list {
-    .inspector-list__list-item {
-      transform: translateX(0);
-      opacity: 1;
-    }
+  .machine-list .inspector-list__list-item {
+    transform: translateX(0);
+    opacity: 1;
   }
 
   .on__unit-listing,
@@ -107,6 +106,18 @@ $slide-up-distance: 30px; // Offset position to start transition
       animation-duration: $slide-in-duration;
       animation-name: slideIn;
       animation-fill-mode: forwards;
+    }
+  }
+}
+
+.animation--slide-out {
+  .on__unit-listing,
+  .on__error-listing,
+  .on__pending-listing,
+  .on__uncommitted-listing {
+    .inspector-list__list-item,
+    .inspector-list__list-item--tabbed {
+      animation-name: slideOut;
     }
   }
 }
@@ -163,6 +174,31 @@ $slide-up-distance: 30px; // Offset position to start transition
     opacity: 1;
   }
 }
+
+@keyframes slideOut {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateX(-$slide-in-distance);
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+    transform: translateX(-$slide-in-distance);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    display: block;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 @keyframes slideUp {
   0% {

@@ -4,6 +4,7 @@ function init() {
 	var animationStaggered = false,
 		inspector = document.getElementById("inspector"),
 		toUnitList = document.getElementsByClassName("js__to--unit-list"),
+		toUnitListBack = document.getElementsByClassName("js__to--unit-list-back"),
 		toMachineList = document.getElementsByClassName("js__to--machine-list"),
 		toPendingList = document.getElementsByClassName("js__to--pending-list"),
 		toUncommitedList = document.getElementsByClassName("js__to--uncommited-list"),
@@ -14,12 +15,31 @@ function init() {
 	// Change the state class on the inspector to unit-listing
 	var showUnitList = function(e) {
 		e.preventDefault();
+		if (document.body.className.includes('animation--slide-out')) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
 		if (e.target.className === 'inspector-list__notify--error') {
 			inspector.className = 'inspector on__error-listing';
 		} else {
 			inspector.className = 'inspector on__unit-listing';
 		}
 	};
+
+	var showUnitListBack = function(e) {
+		e.preventDefault();
+		if (document.body.className.includes('animation--slide-in')) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-out animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-out';
+			}
+		}
+		inspector.className = 'inspector on__unit-listing';
+	}
 
 	// Change the state class on the inspector to machine-listing
 	var showMachineList = function (e) {
@@ -61,7 +81,6 @@ function init() {
 			animationStaggered = false;
 			document.body.className = document.body.className.replace('animation--stagger', '');
 		}
-		//document.body.className = e.target.value;
 	};
 
 	animationSwitcher.addEventListener('change', changeAnimation, false);
@@ -69,6 +88,10 @@ function init() {
 
 	for (var i = 0; i < toUnitList.length; i++) {
 	    toUnitList[i].addEventListener('click', showUnitList, false);
+	}
+
+	for (var i = 0; i < toUnitListBack.length; i++) {
+	    toUnitListBack[i].addEventListener('click', showUnitListBack, false);
 	}
 
 	for (var i = 0; i < toMachineList.length; i++) {

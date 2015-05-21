@@ -104,15 +104,16 @@
   padding: 20px 20px 20px 40px;
 }
 
+.inspector-list__header-back {
+  display: inline;
+  color: $header-link-color;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
 .inspector-list__header {
   padding: 15px 20px;
   border-bottom: 1px solid $mid-grey;
-
-  .inspector-list__header-back {
-    display: inline;
-    vertical-align: middle;
-    text-decoration: none;
-  }
 
   .inspector-list__header-title {
     display: inline;
