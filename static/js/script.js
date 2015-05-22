@@ -63,18 +63,39 @@ function init() {
 	// Change the state class on the inspector to error-listing
 	var showErrorList = function (e) {
 		e.preventDefault();
+		if (document.body.className.includes('animation--slide-out')) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
 		inspector.className = 'inspector on__error-listing';
 	};
 
 	// Change the state class on the inspector to pending-listing
 	var showPendingList = function (e) {
 		e.preventDefault();
+		if (document.body.className.includes('animation--slide-out')) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
 		inspector.className = 'inspector on__pending-listing';
 	};
 
 	// Change the state class on the inspector to uncommitted-listing
 	var showUncommitedList = function (e) {
 		e.preventDefault();
+		if (document.body.className.includes('animation--slide-out')) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
 		inspector.className = 'inspector on__uncommitted-listing';
 	};
 
