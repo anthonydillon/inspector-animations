@@ -16,7 +16,7 @@ function init() {
 	// Change the state class on the inspector to unit-listing
 	var showUnitList = function(e) {
 		e.preventDefault();
-		if (document.body.className.includes('animation--slide-out')) {
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
 			if (animationStaggered) {
 				document.body.className = 'animation--slide-in animation--stagger';
 			} else {
@@ -32,7 +32,7 @@ function init() {
 
 	var showUnitListBack = function(e) {
 		e.preventDefault();
-		if (document.body.className.includes('animation--slide-in')) {
+		if (document.body.className.indexOf('animation--slide-in') != -1) {
 			if (animationStaggered) {
 				document.body.className = 'animation--slide-out animation--stagger';
 			} else {
@@ -50,7 +50,7 @@ function init() {
 
 	var showMachineListBack = function (e) {
 		e.preventDefault();
-		if (document.body.className.includes('animation--slide-in')) {
+		if (document.body.className.indexOf('animation--slide-in') != -1) {
 			if (animationStaggered) {
 				document.body.className = 'animation--slide-out animation--stagger';
 			} else {
@@ -63,7 +63,7 @@ function init() {
 	// Change the state class on the inspector to error-listing
 	var showErrorList = function (e) {
 		e.preventDefault();
-		if (document.body.className.includes('animation--slide-out')) {
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
 			if (animationStaggered) {
 				document.body.className = 'animation--slide-in animation--stagger';
 			} else {
@@ -76,7 +76,7 @@ function init() {
 	// Change the state class on the inspector to pending-listing
 	var showPendingList = function (e) {
 		e.preventDefault();
-		if (document.body.className.includes('animation--slide-out')) {
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
 			if (animationStaggered) {
 				document.body.className = 'animation--slide-in animation--stagger';
 			} else {
@@ -89,7 +89,7 @@ function init() {
 	// Change the state class on the inspector to uncommitted-listing
 	var showUncommitedList = function (e) {
 		e.preventDefault();
-		if (document.body.className.includes('animation--slide-out')) {
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
 			if (animationStaggered) {
 				document.body.className = 'animation--slide-in animation--stagger';
 			} else {
