@@ -76,6 +76,10 @@
   transition: height .2s ease-in-out;
 }
 
+.inspector-list__wrapper {
+    @extend %box
+}
+
 .inspector__mask {
   overflow: hidden;
 }

@@ -6,7 +6,8 @@
 }
 
 .inspector-list__list-item,
-.inspector-list__list-item--tabbed {
+.inspector-list__list-item--tabbed,
+.inspector-list__list-item--heading {
   padding: 10px 20px;
 
   &:hover {
@@ -18,8 +19,8 @@
   }
 
   .inspector-list__image {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     display: inline;
     vertical-align: middle;
   }
@@ -27,6 +28,20 @@
   .inspector-list__name {
     display: inline;
     margin-left: 6px;
+  }
+
+  .inspector-list__name--sub {
+    @extend .inspector-list__name;
+    color: $warm_grey;
+    line-height: 1.5;
+    margin-left: 27px;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .inspector-list__name-unit {
+    color: $warm_grey;
   }
 
   .inspector-list__link {
@@ -76,8 +91,17 @@
   }
 }
 
+.inspector-list__list-item--heading {
+  border-bottom: 1px solid $mid-grey;
+  border-top: 1px solid $mid-grey;
+
+  &:first-of-type {
+    border-top: 0;
+  }
+}
+
 .inspector-list__list-item {
-  padding: 20px;
+  padding: 10px 20px;
 
   svg {
     position: relative;
@@ -101,7 +125,7 @@
 }
 
 .inspector-list__list-item--tabbed {
-  padding: 20px 20px 20px 40px;
+  padding: 10px 20px 10px 40px;
 }
 
 .inspector-list__header-back {
@@ -112,8 +136,13 @@
 }
 
 .inspector-list__header {
-  padding: 15px 20px;
+  padding: 10px 20px;
   border-bottom: 1px solid $mid-grey;
+
+  .inspector-list__header-back {
+    position: relative;
+    top: -1px;
+  }
 
   .inspector-list__header-title {
     display: inline;
@@ -122,10 +151,19 @@
 
   .inspector-list__header-image {
     position: relative;
-    top: -5px;
-    width: 30px;
-    height: 30px;
+    top: -3px;
+    width: 24px;
+    height: 24px;
     float: right;
+  }
+
+  .inspector-list__header-edit {
+    float: right;
+    margin-right: 10px;
+
+    &:hover path {
+      fill: $cool-grey;
+    }
   }
 }
 

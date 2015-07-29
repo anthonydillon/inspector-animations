@@ -37,4 +37,32 @@ body {
   input {
     cursor: pointer;
   }
+
+  input[type="text"] {
+    font-family: Ubuntu;
+    font-size: 0.875em;
+    border-radius: 2px;
+    border: 1px solid $mid-grey;
+    padding: 5px 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.5;
+
+    &.help-text {
+      font-size: 0.875em;
+    }
+  }
+
+  a {
+    color: $brand-color;
+    text-decoration: none;
+    word-break:     break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens:    auto;
+    hyphens:         auto
+  }
 }

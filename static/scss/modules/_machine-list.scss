@@ -3,7 +3,11 @@
   padding-bottom: 10px;
 
   .inspector-list__list-item {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .inspector-list__name {
+    margin-left: 16px;
   }
 }

@@ -10,6 +10,7 @@ function init() {
 		toPendingList = document.getElementsByClassName("js__to--pending-list"),
 		toUncommitedList = document.getElementsByClassName("js__to--uncommited-list"),
 		toErrorList = document.getElementsByClassName("js__to--error-list"),
+		toConfigureList = document.getElementsByClassName("js__to--configure-list"),
 		animationSwitcher = document.getElementById("animation-switcher"),
 		animationStagger = document.getElementById("animation-stagger");
 
@@ -71,6 +72,19 @@ function init() {
 			}
 		}
 		inspector.className = 'inspector on__error-listing';
+	};
+
+	// Change the state class on the inspector to configure-listing
+	var showConfigureList = function (e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__configure-listing';
 	};
 
 	// Change the state class on the inspector to pending-listing
@@ -138,6 +152,10 @@ function init() {
 
 	for (var i = 0; i < toErrorList.length; i++) {
 	    toErrorList[i].addEventListener('click', showErrorList, false);
+	}
+
+	for (var i = 0; i < toConfigureList.length; i++) {
+		toConfigureList[i].addEventListener('click', showConfigureList, false);
 	}
 
 	for (var i = 0; i < toUncommitedList.length; i++) {

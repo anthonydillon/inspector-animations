@@ -23,6 +23,10 @@
   display: block;
 }
 
+.on__configure-listing .configure-list {
+  display: block;
+}
+
 
 .animation--fade-in,
 .animation--slide-in,
@@ -248,6 +252,3 @@ $slide-up-distance: 30px; // Offset position to start transition
     opacity: 1;
   }
 }
-
-
-

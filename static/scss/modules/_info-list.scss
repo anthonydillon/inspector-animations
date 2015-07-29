@@ -10,7 +10,7 @@
   }
 
   .inspector-list__header {
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-bottom: 1px solid $mid-grey;
     color: $white;
 
@@ -27,7 +27,9 @@
   }
 
   .inspector-list__check-box {
-    margin: 10px 5px;
+    position: relative;
+    top: -1px;
+    margin: 0 5px;
     border-radius: 4px;
     -webkit-appearance: button;
     background-color: $mid-grey;
@@ -49,7 +51,7 @@
     }
 
     &:checked {
-      background-color: $brand-color;
+      background-color: $success;
     }
 
     &:checked:after {
@@ -57,9 +59,17 @@
     }
   }
 
+  .inspector-list__footer-list {
+    display: flex;
+  }
+
   .inspector-list__footer-list-item {
-    width: 32%;
-    display: inline-block;
+    flex: auto;
+    margin-right: 10px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 
   .inspector-list__notify--error {

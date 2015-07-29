@@ -1,6 +1,7 @@
 
 .inspector__switcher {
   @extend %box;
+  padding: 10px 20px;
   margin-bottom: 10px;
 
   .inspector__switcher-list {

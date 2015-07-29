@@ -1,13 +1,13 @@
 .unit-list {
 
   .inspector-list__footer-list-item {
-    width: 49%;
+    width: 100%;
     display: inline-block;
   }
 
   .inspector-list__notify--error,
   .inspector-list__notify--pending,
-  .inspector-list__notify--uncommitted {
+  .inspector-list__notify--uncommited {
     position: relative;
     top: -5px;
   }
