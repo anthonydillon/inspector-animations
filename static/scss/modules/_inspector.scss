@@ -73,11 +73,14 @@
   @extend %box;
   padding: 0;
   overflow: hidden;
+  overflow-y: auto;
   transition: height .2s ease-in-out;
+  max-height: 100%;
 }
 
 .inspector-list__wrapper {
-    @extend %box
+  @extend %box;
+  box-shadow: none;
 }
 
 .inspector__mask {

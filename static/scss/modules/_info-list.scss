@@ -59,22 +59,22 @@
     }
   }
 
-  .inspector-list__footer-list {
-    display: flex;
-  }
-
-  .inspector-list__footer-list-item {
-    flex: auto;
-    margin-right: 10px;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-
   .inspector-list__notify--error {
     position: relative;
     top: -5px;
+  }
+}
+
+.inspector-list__footer-list {
+  display: flex;
+}
+
+.inspector-list__footer-list-item {
+  flex: auto;
+  margin-right: 10px;
+
+  &:last-of-type {
+    margin-right: 0;
   }
 }
 

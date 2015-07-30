@@ -27,29 +27,61 @@
   display: block;
 }
 
+.on__relations-listing .relations-list {
+  display: block;
+}
+
+.on__actions-listing .actions-list {
+  display: block;
+}
+
+.on__backups-listing .backup-list {
+  display: block;
+}
+
+.on__version-listing .version-list {
+  display: block;
+}
+
 
 .animation--fade-in,
 .animation--slide-in,
 .animation--slide-out,
 .animation--slide-up {
   .on__machine-listing .inspector__content {
-    height: 270px;
+    height: 230px;
   }
 
   .on__unit-listing .inspector__content {
-    height: 582px;
+    height: 552px;
   }
 
   .on__error-listing .inspector__content {
-    height: 386px;
+    height: 376px;
   }
 
   .on__uncommitted-listing .inspector__content {
-    height: 255px;
+    height: 220px;
   }
 
   .on__pending-listing .inspector__content {
-    height: 255px;
+    height: 220px;
+  }
+
+  .on__configure-listing .inspector__content {
+    height: 815px;
+  }
+
+  .on__relations-listing .inspector__content {
+    height: 357px;
+  }
+
+  .on__actions-listing .inspector__content {
+    height: 348px;
+  }
+
+  .on__version-listing .inspector__content {
+    height: 304px;
   }
 }
 
@@ -79,6 +111,7 @@ $slide-up-distance: 30px; // Offset position to start transition
 
 .animation--fade-in {
   .inspector-list__list-item,
+  .inspector-list__wrapper,
   .inspector-list__list-item--tabbed,
   .inspector-list__footer {
     opacity: 0;
@@ -88,8 +121,14 @@ $slide-up-distance: 30px; // Offset position to start transition
   .on__machine-listing,
   .on__error-listing,
   .on__pending-listing,
-  .on__uncommitted-listing {
+  .on__uncommitted-listing,
+  .on__version-listing,
+  .on__backups-listing,
+  .on__actions-listing,
+  .on__relations-listing,
+  .on__configure-listing {
     .inspector-list__list-item,
+    .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
     .inspector-list__footer {
       animation-duration: $fade-in-duration;
@@ -103,6 +142,7 @@ $slide-up-distance: 30px; // Offset position to start transition
 .animation--slide-in,
 .animation--slide-out {
   .inspector-list__list-item,
+  .inspector-list__wrapper,
   .inspector-list__list-item--tabbed,
   .inspector-list__footer {
     transform: translateX($slide-in-distance);
@@ -110,11 +150,17 @@ $slide-up-distance: 30px; // Offset position to start transition
   }
 
   .on__unit-listing,
-  .on__error-listing,
   .on__machine-listing,
+  .on__error-listing,
   .on__pending-listing,
-  .on__uncommitted-listing {
+  .on__uncommitted-listing,
+  .on__version-listing,
+  .on__backups-listing,
+  .on__actions-listing,
+  .on__relations-listing,
+  .on__configure-listing {
     .inspector-list__list-item,
+    .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
     .inspector-list__footer {
       animation-duration: $slide-in-duration;
@@ -126,11 +172,17 @@ $slide-up-distance: 30px; // Offset position to start transition
 
 .animation--slide-out {
   .on__unit-listing,
-  .on__error-listing,
   .on__machine-listing,
+  .on__error-listing,
   .on__pending-listing,
-  .on__uncommitted-listing {
+  .on__uncommitted-listing,
+  .on__version-listing,
+  .on__backups-listing,
+  .on__actions-listing,
+  .on__relations-listing,
+  .on__configure-listing {
     .inspector-list__list-item,
+    .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
     .inspector-list__footer {
       animation-name: slideOut;
@@ -142,6 +194,7 @@ $slide-up-distance: 30px; // Offset position to start transition
 /// Slide up
 .animation--slide-up {
   .inspector-list__list-item,
+  .inspector-list__wrapper,
   .inspector-list__list-item--tabbed,
   .inspector-list__footer {
     transform: translateY($slide-up-distance);
@@ -149,11 +202,17 @@ $slide-up-distance: 30px; // Offset position to start transition
   }
 
   .on__unit-listing,
+  .on__machine-listing,
   .on__error-listing,
   .on__pending-listing,
-  .on__machine-listing,
-  .on__uncommitted-listing {
+  .on__uncommitted-listing,
+  .on__version-listing,
+  .on__backups-listing,
+  .on__actions-listing,
+  .on__relations-listing,
+  .on__configure-listing {
     .inspector-list__list-item,
+    .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
     .inspector-list__footer {
       animation-duration: $slide-up-duration;

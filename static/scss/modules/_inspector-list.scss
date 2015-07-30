@@ -108,7 +108,18 @@
     top: 2px;
   }
 
+  .inspector-list__upgrade-link,
+  .inspector-list__link-next {
+    float: right;
+    display: none;
+  }
+
   &:hover {
+
+    .inspector-list__upgrade-link,
+    .inspector-list__link-next {
+      display: block;
+    }
 
     .inspector-list__controls-list {
       opacity: 1;
@@ -180,6 +191,7 @@
 
 .inspector-list__footer-list-button {
   transition: background .3s;
+  border-radius: 2px;
   text-align: center;
   display: block;
   width: 100%;
@@ -193,6 +205,17 @@
 
   &:hover {
     background-color: $light-grey;
+  }
+
+  &--primary {
+    @extend .inspector-list__footer-list-button;
+    background: $brand-color;
+    color: $white;
+    border: 1px solid $brand-color;
+
+    &:hover {
+      background-color: darken($brand-color, 10%);
+    }
   }
 }
 

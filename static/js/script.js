@@ -11,6 +11,10 @@ function init() {
 		toUncommitedList = document.getElementsByClassName("js__to--uncommited-list"),
 		toErrorList = document.getElementsByClassName("js__to--error-list"),
 		toConfigureList = document.getElementsByClassName("js__to--configure-list"),
+		toRelationsList = document.getElementsByClassName("js__to--relations-list"),
+		toActionsList = document.getElementsByClassName("js__to--actions-list"),
+		toBackupList = document.getElementsByClassName("js__to--backup-list"),
+		toVersionList = document.getElementsByClassName("js__to--version-list"),
 		animationSwitcher = document.getElementById("animation-switcher"),
 		animationStagger = document.getElementById("animation-stagger");
 
@@ -87,6 +91,42 @@ function init() {
 		inspector.className = 'inspector on__configure-listing';
 	};
 
+	var showActionsList = function (e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__actions-listing';
+	};
+
+	var showRelationsList = function (e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__relations-listing';
+	};
+
+	var showBackupsList = function (e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__backups-listing';
+	};
+
 	// Change the state class on the inspector to pending-listing
 	var showPendingList = function (e) {
 		e.preventDefault();
@@ -119,6 +159,18 @@ function init() {
 		} else {
 			document.body.className = e.target.value;
 		}
+	};
+
+	var showVersionList = function (e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__version-listing';
 	};
 
 	var staggerAnimation = function (e) {
@@ -158,12 +210,28 @@ function init() {
 		toConfigureList[i].addEventListener('click', showConfigureList, false);
 	}
 
+	for (var i = 0; i < toRelationsList.length; i++) {
+		toRelationsList[i].addEventListener('click', showRelationsList, false);
+	}
+
+	for (var i = 0; i < toActionsList.length; i++) {
+		toActionsList[i].addEventListener('click', showActionsList, false);
+	}
+
 	for (var i = 0; i < toUncommitedList.length; i++) {
 	    toUncommitedList[i].addEventListener('click', showUncommitedList, false);
 	}
 
 	for (var i = 0; i < toPendingList.length; i++) {
 	    toPendingList[i].addEventListener('click', showPendingList, false);
+	}
+
+	for (var i = 0; i < toBackupList.length; i++) {
+	    toBackupList[i].addEventListener('click', showBackupsList, false);
+	}
+
+	for (var i = 0; i < toVersionList.length; i++) {
+	    toVersionList[i].addEventListener('click', showVersionList, false);
 	}
 }
 
