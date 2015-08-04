@@ -145,9 +145,6 @@
 								<svg class="inspector-list__header-back" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="6px" height="16px" viewBox="0 0 6 16"><path fillRule="evenodd" class="inspector-list__header-back-image" d="M 1.29 10.18C 1.84 11.01 2.46 11.86 3.15 12.74 3.84 13.62 4.58 14.48 5.37 15.34 5.58 15.56 5.79 15.78 6 16 6 16 6 13.53 6 13.53 5.57 13.05 5.14 12.54 4.73 12.02 4.25 11.41 3.8 10.79 3.37 10.15 2.95 9.51 2.43 8.61 2.1 8 2.43 7.39 2.95 6.49 3.37 5.85 3.8 5.22 4.25 4.59 4.73 3.98 5.14 3.46 5.57 2.95 6 2.47 6 2.47 6 0 6 0 5.79 0.22 5.58 0.44 5.37 0.67 4.58 1.52 3.84 2.38 3.15 3.26 2.46 4.14 1.84 4.99 1.29 5.82 0.75 6.65 0.32 7.38 0 8 0.32 8.62 0.75 9.35 1.29 10.18" fill="rgb(131,147,149)"/></svg>
 								<h2 class="inspector-list__header-title">mediawiki</h2>
 								<img src="https://api.jujucharms.com/charmstore/v4/trusty/mediawiki-3/icon.svg" alt="mediawiki" class="inspector-list__header-image" />
-								<a href="#" class="inspector-list__header-edit">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M7.99 16v-1H16v1H7.99zm2-3H16v1H9.99v-1zM12 11h4v1h-4v-1zM0 15.98c.69-3.29 2.52-6.16 2.52-6.16L12.17 0l3.81 3.81-9.82 9.65S3.29 15.29 0 15.98zm3.28-5.4c-.06.1-.82 1.2-1.39 2.5l1.02 1.02c1.3-.57 2.4-1.32 2.51-1.38l-2.14-2.14z" fill="#878787"/></svg>
-								</a>
 							</header>
 						</a>
 						<div class="inspector-list__content">
@@ -359,6 +356,8 @@
 						<div class="inspector-list__content">
 							<div class="inspector-list__wrapper">
 								<input type="text" placeholder="Import config file..." />
+								<h3>Rename unit</h3>
+								<input type="text" placeholder="mediawiki" />
 								<h3>tuning-level (string)</h3>
 								<input type="text" placeholder="Fast (uncommitted)" />
 								<p class="help-text">Valid values are 'safest', 'fast', 'and unsafe'. If set to safest, all settings are tuned to have maximum safety at the cost of performance. Fast will turn off most controls, but may lose data on crashes. Unsafe will turn off all protections.</p>

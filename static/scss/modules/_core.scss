@@ -47,7 +47,9 @@ body {
     width: 100%;
     box-sizing: border-box;
 
-    + p {
+    + p,
+    + input,
+    + h3 {
       margin-top: 1em;
     }
   }
@@ -71,6 +73,10 @@ body {
   h3 {
     font-size: 1em;
     font-weight: 300;
+  }
+
+  h3 {
+    margin-top: 0;
   }
 
   a {
