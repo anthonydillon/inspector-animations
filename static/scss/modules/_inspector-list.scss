@@ -112,6 +112,8 @@
   .inspector-list__link-next {
     float: right;
     display: none;
+    position: relative;
+    top: 2px;
   }
 
   &:hover {
