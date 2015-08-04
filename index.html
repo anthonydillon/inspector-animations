@@ -9,7 +9,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic%7CUbuntu+Mono' rel='stylesheet' type='text/css' />
 		<script src="static/js/script.js"></script>
 	</head>
-	<body >
+	<body class="animation--fade-in animation--stagger">
 		<div class="branding">
 			<div class="inner-wrapper">
 				<h1 class="branding__title">
@@ -18,11 +18,11 @@
 				<div class="animation-tweaker">
 					<select class="animation-switcher" id="animation-switcher">
 						<option value="">No animation</option>
-						<option value="animation--fade-in">Fade in</option>
+						<option value="animation--fade-in" selected="selected">Fade in</option>
 						<option value="animation--slide-in">Slide</option>
 						<option value="animation--slide-up">Fade up</option>
 					</select>
-					<input type="checkbox" name="animation-stagger" value="animation-stagger" id="animation-stagger" class="stagger-animation__check-box">
+					<input type="checkbox" name="animation-stagger" checked value="animation-stagger" id="animation-stagger" class="stagger-animation__check-box">
 					<label for="animation-stagger">Stagger animation</label>
 				</div>
 			</div>
@@ -201,13 +201,6 @@
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13"><path d="M15.07 11.48l-1-.86c-1.11 1.48-2.84 2.33-4.65 2.33-.5 0-1-.06-1.5-.2-2.54-.68-4.31-3.01-4.31-5.66H5.7c0 1.7 1.13 3.19 2.76 3.63 1.52.41 3.11-.2 4-1.47l-1-.86s2.2-1.09 4.53-1.68H16c-.24 2.53-.93 4.77-.93 4.77zm-7.5-8.87c-1.5-.41-3.08.17-3.98 1.41l1.05.9S2.4 6.04 0 6.65v-.01c.25-2.59.95-4.88.95-4.88l1.05.9C3.42.82 5.83-.03 8.11.58c2.55.69 4.33 3.02 4.33 5.68h-2.08c0-1.71-1.15-3.21-2.79-3.65z" fill="#93A1A1" class="inspector-list__list-item-image"/></svg>
 										<p class="inspector-list__name">Change verison</p>
 										<p class="inspector-list__name--sub">cs:precise/mediawiki-18</p>
-									</a>
-								</li>
-								<li class="inspector-list__list-item">
-									<a href="#" class="inspector-list__link">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#93A1A1" class="inspector-list__list-item-image"/></svg>
-										<p class="inspector-list__name">9-5 support</p>
-										<p class="inspector-list__name--sub">3 plans available</p>
 									</a>
 								</li>
 							</ul>
@@ -431,40 +424,29 @@
 								<li class="inspector-list__list-item">
 									<a href="#" class="inspector-list__link">
 										<p class="inspector-list__name">Rebuild index</p>
-										<svg class="inspector-list__link-next" xmlns="http://www.w3.org/2000/svg" width="6" height="16" viewBox="0 0 6 16"><path d="M4.71 10.18c-.55.83-1.17 1.68-1.86 2.56-.69.88-1.43 1.75-2.22 2.6-.21.22-.42.45-.63.66v-2.46c.43-.49.86-1 1.27-1.52.48-.61.93-1.23 1.36-1.87.42-.64.94-1.54 1.27-2.15-.33-.61-.85-1.51-1.27-2.15-.43-.63-.88-1.26-1.36-1.87C.86 3.46.43 2.95 0 2.47V0c.21.22.42.44.63.67.79.85 1.53 1.71 2.22 2.59.69.88 1.31 1.73 1.86 2.56.54.83.97 1.56 1.29 2.18-.32.62-.75 1.35-1.29 2.18" fill="#839395"/></svg>
 									</a>
 								</li>
 								<li class="inspector-list__list-item">
 									<a href="#" class="inspector-list__link js__to--backup-list">
 										<p class="inspector-list__name">Backup</p>
-										<svg class="inspector-list__link-next" xmlns="http://www.w3.org/2000/svg" width="6" height="16" viewBox="0 0 6 16"><path d="M4.71 10.18c-.55.83-1.17 1.68-1.86 2.56-.69.88-1.43 1.75-2.22 2.6-.21.22-.42.45-.63.66v-2.46c.43-.49.86-1 1.27-1.52.48-.61.93-1.23 1.36-1.87.42-.64.94-1.54 1.27-2.15-.33-.61-.85-1.51-1.27-2.15-.43-.63-.88-1.26-1.36-1.87C.86 3.46.43 2.95 0 2.47V0c.21.22.42.44.63.67.79.85 1.53 1.71 2.22 2.59.69.88 1.31 1.73 1.86 2.56.54.83.97 1.56 1.29 2.18-.32.62-.75 1.35-1.29 2.18" fill="#839395"/></svg>
 									</a>
 								</li>
 								<li class="inspector-list__list-item">
 									<a href="#" class="inspector-list__link">
-										<p class="inspector-list__name">Debugging on</p>
-										<svg class="inspector-list__link-next" xmlns="http://www.w3.org/2000/svg" width="6" height="16" viewBox="0 0 6 16"><path d="M4.71 10.18c-.55.83-1.17 1.68-1.86 2.56-.69.88-1.43 1.75-2.22 2.6-.21.22-.42.45-.63.66v-2.46c.43-.49.86-1 1.27-1.52.48-.61.93-1.23 1.36-1.87.42-.64.94-1.54 1.27-2.15-.33-.61-.85-1.51-1.27-2.15-.43-.63-.88-1.26-1.36-1.87C.86 3.46.43 2.95 0 2.47V0c.21.22.42.44.63.67.79.85 1.53 1.71 2.22 2.59.69.88 1.31 1.73 1.86 2.56.54.83.97 1.56 1.29 2.18-.32.62-.75 1.35-1.29 2.18" fill="#839395"/></svg>
-									</a>
+										<p class="inspector-list__name">Debugging on</p></a>
 								</li>
 								<li class="inspector-list__list-item">
 									<a href="#" class="inspector-list__link">
 										<p class="inspector-list__name">Debugging off</p>
-										<svg class="inspector-list__link-next" xmlns="http://www.w3.org/2000/svg" width="6" height="16" viewBox="0 0 6 16"><path d="M4.71 10.18c-.55.83-1.17 1.68-1.86 2.56-.69.88-1.43 1.75-2.22 2.6-.21.22-.42.45-.63.66v-2.46c.43-.49.86-1 1.27-1.52.48-.61.93-1.23 1.36-1.87.42-.64.94-1.54 1.27-2.15-.33-.61-.85-1.51-1.27-2.15-.43-.63-.88-1.26-1.36-1.87C.86 3.46.43 2.95 0 2.47V0c.21.22.42.44.63.67.79.85 1.53 1.71 2.22 2.59.69.88 1.31 1.73 1.86 2.56.54.83.97 1.56 1.29 2.18-.32.62-.75 1.35-1.29 2.18" fill="#839395"/></svg>
 									</a>
 								</li>
 								<li class="inspector-list__list-item">
-									<p class="inspector-list__name">Run command</p>
-									<input type="text" placeholder="Command..." />
+									<a href="#" class="inspector-list__link">
+										<p class="inspector-list__name">Run command</p>
+									</a>
 								</li>
 							</ul>
 						</div>
-						<footer class="inspector-list__footer">
-							<ul class="inspector-list__footer-list">
-								<li class="inspector-list__footer-list-item">
-									<button type="button" class="inspector-list__footer-list-button">Run</button>
-								</li>
-							</ul>
-						</footer>
 					</section>
 
 					<section class="inspector-list backup-list">
