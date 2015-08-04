@@ -113,6 +113,7 @@ $slide-up-distance: 30px; // Offset position to start transition
   .inspector-list__list-item,
   .inspector-list__wrapper,
   .inspector-list__list-item--tabbed,
+  .inspector-list__list-item--heading,
   .inspector-list__footer {
     opacity: 0;
   }
@@ -130,6 +131,7 @@ $slide-up-distance: 30px; // Offset position to start transition
     .inspector-list__list-item,
     .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
+    .inspector-list__list-item--heading,
     .inspector-list__footer {
       animation-duration: $fade-in-duration;
       animation-name: fadeIn;
@@ -144,6 +146,7 @@ $slide-up-distance: 30px; // Offset position to start transition
   .inspector-list__list-item,
   .inspector-list__wrapper,
   .inspector-list__list-item--tabbed,
+  .inspector-list__list-item--heading,
   .inspector-list__footer {
     transform: translateX($slide-in-distance);
     opacity: 0;
@@ -162,6 +165,7 @@ $slide-up-distance: 30px; // Offset position to start transition
     .inspector-list__list-item,
     .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
+    .inspector-list__list-item--heading,
     .inspector-list__footer {
       animation-duration: $slide-in-duration;
       animation-name: slideIn;
@@ -184,6 +188,7 @@ $slide-up-distance: 30px; // Offset position to start transition
     .inspector-list__list-item,
     .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
+    .inspector-list__list-item--heading,
     .inspector-list__footer {
       animation-name: slideOut;
     }
@@ -196,6 +201,7 @@ $slide-up-distance: 30px; // Offset position to start transition
   .inspector-list__list-item,
   .inspector-list__wrapper,
   .inspector-list__list-item--tabbed,
+  .inspector-list__list-item--heading,
   .inspector-list__footer {
     transform: translateY($slide-up-distance);
     opacity: 0;
@@ -214,6 +220,7 @@ $slide-up-distance: 30px; // Offset position to start transition
     .inspector-list__list-item,
     .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
+    .inspector-list__list-item--heading,
     .inspector-list__footer {
       animation-duration: $slide-up-duration;
       animation-name: slideUp;
