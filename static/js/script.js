@@ -15,6 +15,7 @@ function init() {
 		toActionsList = document.getElementsByClassName("js__to--actions-list"),
 		toBackupList = document.getElementsByClassName("js__to--backup-list"),
 		toVersionList = document.getElementsByClassName("js__to--version-list"),
+		toUnitDetailsList = document.getElementsByClassName("js__to--unit-details-list"),
 		animationSwitcher = document.getElementById("animation-switcher"),
 		animationStagger = document.getElementById("animation-stagger");
 
@@ -173,6 +174,20 @@ function init() {
 		inspector.className = 'inspector on__version-listing';
 	};
 
+	var showUnitDetailsList = function (e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__unit-details-listing';
+	};
+
+
+
 	var staggerAnimation = function (e) {
 		if (e.target.checked) {
 			animationStaggered = true;
@@ -233,6 +248,11 @@ function init() {
 	for (var i = 0; i < toVersionList.length; i++) {
 	    toVersionList[i].addEventListener('click', showVersionList, false);
 	}
+
+	for (var i = 0; i < toUnitDetailsList.length; i++) {
+	    toUnitDetailsList[i].addEventListener('click', showUnitDetailsList, false);
+	}
+
 }
 
 // Add window listener to listen to load to initialise the js behaviour

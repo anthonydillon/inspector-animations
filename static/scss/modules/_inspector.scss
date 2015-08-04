@@ -65,21 +65,26 @@
 .inspector {
   @extend %proto-center;
   display: block;
-  height: 500px;
+  height: 600px;
   width: 295px;
 }
 
 .inspector__content {
   @extend %box;
   padding: 0;
+  max-height: 100%;
+  transition: height .2s;
+}
+
+.inspector-list__content {
   overflow: hidden;
   overflow-y: auto;
-  transition: height .2s;
-  max-height: 100%;
+  max-height: 500px;
 }
 
 .inspector-list__wrapper {
   @extend %box;
+  padding-bottom: 0;
   box-shadow: none;
 }
 

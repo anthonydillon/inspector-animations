@@ -43,6 +43,10 @@
   display: block;
 }
 
+.on__unit-details-listing .unit-details-list {
+  display: block;
+}
+
 
 .animation--fade-in,
 .animation--slide-in,
@@ -69,19 +73,23 @@
   }
 
   .on__configure-listing .inspector__content {
-    height: 815px;
+    height: 867px;
   }
 
   .on__relations-listing .inspector__content {
-    height: 357px;
+    height: 340px;
   }
 
   .on__actions-listing .inspector__content {
-    height: 348px;
+    height: 260px;
   }
 
   .on__version-listing .inspector__content {
     height: 304px;
+  }
+
+  .on__unit-details-listing .inspector__content {
+    height: 521px;
   }
 }
 
@@ -127,7 +135,8 @@ $slide-up-distance: 30px; // Offset position to start transition
   .on__backups-listing,
   .on__actions-listing,
   .on__relations-listing,
-  .on__configure-listing {
+  .on__configure-listing,
+  .on__unit-details-listing {
     .inspector-list__list-item,
     .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
@@ -161,7 +170,8 @@ $slide-up-distance: 30px; // Offset position to start transition
   .on__backups-listing,
   .on__actions-listing,
   .on__relations-listing,
-  .on__configure-listing {
+  .on__configure-listing,
+  .on__unit-details-listing {
     .inspector-list__list-item,
     .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
@@ -184,7 +194,8 @@ $slide-up-distance: 30px; // Offset position to start transition
   .on__backups-listing,
   .on__actions-listing,
   .on__relations-listing,
-  .on__configure-listing {
+  .on__configure-listing,
+  .on__unit-details-listing {
     .inspector-list__list-item,
     .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
@@ -216,7 +227,8 @@ $slide-up-distance: 30px; // Offset position to start transition
   .on__backups-listing,
   .on__actions-listing,
   .on__relations-listing,
-  .on__configure-listing {
+  .on__configure-listing,
+  .on__unit-details-listing {
     .inspector-list__list-item,
     .inspector-list__wrapper,
     .inspector-list__list-item--tabbed,
