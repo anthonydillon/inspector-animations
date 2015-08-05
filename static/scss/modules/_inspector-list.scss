@@ -3,6 +3,43 @@
   list-style: none;
   padding-left: 0;
   margin: 0;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.inspector-list__check-box {
+  position: relative;
+  top: -1px;
+  margin: 0 5px 0 0;
+  border-radius: 4px;
+  -webkit-appearance: button;
+  background-color: $mid-grey;
+  color: $white;
+  overflow: hidden;
+  width: 13px;
+  height: 13px;
+  outline: none;
+  box-shadow: inset 0 1px 4.85px .15px rgba(0, 0, 0, .2);
+  vertical-align: middle;
+
+  &:after {
+    content: '✓';
+    font-size: 12px;
+    position: relative;
+    left: 2px;
+    top: -1px;
+    color: transparent;
+  }
+
+  &:checked {
+    background-color: $success;
+  }
+
+  &:checked:after {
+    color: $white;
+  }
 }
 
 .inspector-list__list-item,
@@ -45,7 +82,6 @@
   }
 
   .inspector-list__link {
-    display: block;
     width: 100%;
     height: 100%;
     color: $cool-grey;
@@ -226,4 +262,13 @@
   top: 10px;
   margin-left: 5px;
   cursor: pointer;
+}
+
+.unit-list--destroy {
+  .inspector-list__footer {
+    position: relative;
+    top: -65px;
+    background: white;
+    border-top: 1px solid $light-grey;
+  }
 }

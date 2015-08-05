@@ -4,6 +4,7 @@ function init() {
 	var animationStaggered = false,
 		inspector = document.getElementById("inspector"),
 		toUnitList = document.getElementsByClassName("js__to--unit-list"),
+		toUnitListDestroy = document.getElementsByClassName("js__to--unit-list--destroy"),
 		toUnitListBack = document.getElementsByClassName("js__to--unit-list-back"),
 		toMachineListBack = document.getElementsByClassName("js__to--machine-list-back"),
 		toMachineList = document.getElementsByClassName("js__to--machine-list"),
@@ -15,7 +16,10 @@ function init() {
 		toActionsList = document.getElementsByClassName("js__to--actions-list"),
 		toBackupList = document.getElementsByClassName("js__to--backup-list"),
 		toVersionList = document.getElementsByClassName("js__to--version-list"),
-		toUnitDetailsList = document.getElementsByClassName("js__to--unit-details-list"),
+		toUnitDetailsListError = document.getElementsByClassName("js__to--unit-details-list--error"),
+		toUnitDetailsListPending = document.getElementsByClassName("js__to--unit-details-list--pending"),
+		toUnitDetailsListUncommited = document.getElementsByClassName("js__to--unit-details-list--uncommited"),
+		toUnitsList = document.getElementsByClassName("js__to--units-list"),
 		animationSwitcher = document.getElementById("animation-switcher"),
 		animationStagger = document.getElementById("animation-stagger");
 
@@ -36,6 +40,19 @@ function init() {
 		}
 	};
 
+	// Change the state class on the inspector to unit-listing
+	var showUnitListDestroy = function(e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__unit-listing--destroy';
+	};
+
 	var showUnitListBack = function(e) {
 		e.preventDefault();
 		if (document.body.className.indexOf('animation--slide-in') != -1) {
@@ -47,6 +64,18 @@ function init() {
 		}
 		inspector.className = 'inspector on__unit-listing';
 	}
+
+	var showUnitsList = function(e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__units-listing';
+	};
 
 	// Change the state class on the inspector to machine-listing
 	var showMachineList = function (e) {
@@ -174,7 +203,7 @@ function init() {
 		inspector.className = 'inspector on__version-listing';
 	};
 
-	var showUnitDetailsList = function (e) {
+	var showUnitDetailsListError = function (e) {
 		e.preventDefault();
 		if (document.body.className.indexOf('animation--slide-out') != -1) {
 			if (animationStaggered) {
@@ -183,7 +212,31 @@ function init() {
 				document.body.className = 'animation--slide-in';
 			}
 		}
-		inspector.className = 'inspector on__unit-details-listing';
+		inspector.className = 'inspector on__unit-details-listing--error';
+	};
+
+	var showUnitDetailsListPending = function (e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__unit-details-listing--pending';
+	};
+
+	var showUnitDetailsListUncommited = function (e) {
+		e.preventDefault();
+		if (document.body.className.indexOf('animation--slide-out') != -1) {
+			if (animationStaggered) {
+				document.body.className = 'animation--slide-in animation--stagger';
+			} else {
+				document.body.className = 'animation--slide-in';
+			}
+		}
+		inspector.className = 'inspector on__unit-details-listing--uncommited';
 	};
 
 
@@ -203,6 +256,14 @@ function init() {
 
 	for (var i = 0; i < toUnitList.length; i++) {
 	    toUnitList[i].addEventListener('click', showUnitList, false);
+	}
+
+	for (var i = 0; i < toUnitListDestroy.length; i++) {
+		toUnitListDestroy[i].addEventListener('click', showUnitListDestroy, false);
+	}
+
+	for (var i = 0; i < toUnitsList.length; i++) {
+	    toUnitsList[i].addEventListener('click', showUnitsList, false);
 	}
 
 	for (var i = 0; i < toUnitListBack.length; i++) {
@@ -249,8 +310,16 @@ function init() {
 	    toVersionList[i].addEventListener('click', showVersionList, false);
 	}
 
-	for (var i = 0; i < toUnitDetailsList.length; i++) {
-	    toUnitDetailsList[i].addEventListener('click', showUnitDetailsList, false);
+	for (var i = 0; i < toUnitDetailsListError.length; i++) {
+		toUnitDetailsListError[i].addEventListener('click', showUnitDetailsListError, false);
+	}
+
+	for (var i = 0; i < toUnitDetailsListPending.length; i++) {
+		toUnitDetailsListPending[i].addEventListener('click', showUnitDetailsListPending, false);
+	}
+
+	for (var i = 0; i < toUnitDetailsListUncommited.length; i++) {
+		toUnitDetailsListUncommited[i].addEventListener('click', showUnitDetailsListUncommited, false);
 	}
 
 }
