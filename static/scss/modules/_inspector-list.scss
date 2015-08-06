@@ -264,8 +264,8 @@
   cursor: pointer;
 }
 
-.unit-list--destroy {
-  .inspector-list__footer {
+.unit-list {
+  .inspector-list__footer.js__toggle--confirm {
     position: relative;
     top: -65px;
     background: white;

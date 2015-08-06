@@ -4,7 +4,6 @@ function init() {
 	var animationStaggered = false,
 		inspector = document.getElementById("inspector"),
 		toUnitList = document.getElementsByClassName("js__to--unit-list"),
-		toUnitListDestroy = document.getElementsByClassName("js__to--unit-list--destroy"),
 		toUnitListBack = document.getElementsByClassName("js__to--unit-list-back"),
 		toMachineListBack = document.getElementsByClassName("js__to--machine-list-back"),
 		toMachineList = document.getElementsByClassName("js__to--machine-list"),
@@ -38,19 +37,6 @@ function init() {
 		} else {
 			inspector.className = 'inspector on__unit-listing';
 		}
-	};
-
-	// Change the state class on the inspector to unit-listing
-	var showUnitListDestroy = function(e) {
-		e.preventDefault();
-		if (document.body.className.indexOf('animation--slide-out') != -1) {
-			if (animationStaggered) {
-				document.body.className = 'animation--slide-in animation--stagger';
-			} else {
-				document.body.className = 'animation--slide-in';
-			}
-		}
-		inspector.className = 'inspector on__unit-listing--destroy';
 	};
 
 	var showUnitListBack = function(e) {
@@ -258,10 +244,6 @@ function init() {
 	    toUnitList[i].addEventListener('click', showUnitList, false);
 	}
 
-	for (var i = 0; i < toUnitListDestroy.length; i++) {
-		toUnitListDestroy[i].addEventListener('click', showUnitListDestroy, false);
-	}
-
 	for (var i = 0; i < toUnitsList.length; i++) {
 	    toUnitsList[i].addEventListener('click', showUnitsList, false);
 	}
@@ -322,6 +304,24 @@ function init() {
 		toUnitDetailsListUncommited[i].addEventListener('click', showUnitDetailsListUncommited, false);
 	}
 
+	setupToggles();
+}
+
+function setupToggles() {
+	var toggles = document.getElementsByClassName("js__toggle");
+	var hide = null;
+	var show = null;
+
+	for (var i = 0; i < toggles.length; i++) {
+		toggles[i].addEventListener('click', function() {
+			if (this.dataset.show && this.dataset.hide) {
+				document.getElementsByClassName(this.dataset.show)[0].classList.remove('is-hidden');
+				document.getElementsByClassName(this.dataset.hide)[0].classList.add('is-hidden');
+			} else {
+				console.warn('Toggle missing show and hide data attributes');
+			}
+		}, false);
+	}
 }
 
 // Add window listener to listen to load to initialise the js behaviour

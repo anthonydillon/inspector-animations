@@ -59,10 +59,6 @@
   display: block;
 }
 
-.on__unit-listing--destroy .unit-list--destroy {
-  display: block;
-}
-
 
 .animation--fade-in,
 .animation--slide-in,
@@ -72,8 +68,7 @@
     height: 210px;
   }
 
-  .on__unit-listing .inspector__content,
-  .on__unit-listing--destroy .inspector__content {
+  .on__unit-listing .inspector__content {
     height: 480px;
   }
 
@@ -150,7 +145,6 @@ $slide-up-distance: 30px; // Offset position to start transition
   }
 
   .on__unit-listing,
-  .on__unit-listing--destroy,
   .on__machine-listing,
   .on__error-listing,
   .on__pending-listing,
@@ -189,7 +183,6 @@ $slide-up-distance: 30px; // Offset position to start transition
   }
 
   .on__unit-listing,
-  .on__unit-listing--destroy,
   .on__machine-listing,
   .on__error-listing,
   .on__pending-listing,
@@ -217,7 +210,6 @@ $slide-up-distance: 30px; // Offset position to start transition
 
 .animation--slide-out {
   .on__unit-listing,
-  .on__unit-listing--destroy,
   .on__machine-listing,
   .on__error-listing,
   .on__pending-listing,
@@ -254,7 +246,6 @@ $slide-up-distance: 30px; // Offset position to start transition
   }
 
   .on__unit-listing,
-  .on__unit-listing--destroy,
   .on__machine-listing,
   .on__error-listing,
   .on__pending-listing,
