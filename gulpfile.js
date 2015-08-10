@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     scsslint = require('gulp-scss-lint'),
     minifycss = require('gulp-minify-css'),
+    shell = require('gulp-shell'),
     util = require('util');
 
 /* Helper functions */
@@ -61,6 +62,12 @@ gulp.task('sass-lite', function() {
 gulp.task('watch', function() {
     gulp.watch('static/scss/**/*.scss', ['sass-lite']);
 });
+
+gulp.task('dev', shell.task([
+  'google-chrome index.html',
+  'atom .',
+  'gulp watch'
+]));
 
 gulp.task('test', ['sasslint']);
 

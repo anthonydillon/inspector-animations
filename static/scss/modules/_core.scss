@@ -90,7 +90,8 @@ body {
 }
 
 .is-hidden {
-  display: none;
+  position: absolute;
+  left: -1000%;
 }
 
 .right {

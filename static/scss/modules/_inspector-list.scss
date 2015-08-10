@@ -266,9 +266,13 @@
 
 .unit-list {
   .inspector-list__footer.js__toggle--confirm {
-    position: relative;
-    top: -65px;
     background: white;
     border-top: 1px solid $light-grey;
+    transition: transform .3s;
+    transform: translateY(-63px);
+
+    &.is-hidden {
+      transform: translateY(0);
+    }
   }
 }
