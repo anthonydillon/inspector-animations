@@ -62,23 +62,26 @@
     vertical-align: middle;
   }
 
-  .inspector-list__name {
+  %inspector-list-name {
     display: inline;
     margin-left: 6px;
   }
 
+  .inspector-list__name {
+    @extend %inspector-list-name;
+  }
+
   .inspector-list__name--sub {
-    @extend .inspector-list__name;
-    color: $warm_grey;
+    @extend %inspector-list-name;
+    color: $warm-grey;
     line-height: 1.5;
-    margin-left: 27px;
     display: block;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   .inspector-list__name-unit {
-    color: $warm_grey;
+    color: $warm-grey;
   }
 
   .inspector-list__link {
@@ -128,11 +131,11 @@
 }
 
 .inspector-list__list-item--heading {
-  border-bottom: 1px solid $mid-grey;
   border-top: 1px solid $mid-grey;
 
   &:first-of-type {
     border-top: 0;
+    border-bottom: 1px solid $mid-grey;
   }
 }
 
@@ -149,7 +152,7 @@
     float: right;
     display: none;
     position: relative;
-    top: 2px;
+    top: -3px;
   }
 
   &:hover {
@@ -226,8 +229,7 @@
   margin: 0;
 }
 
-
-.inspector-list__footer-list-button {
+%list-button {
   transition: background .3s;
   border-radius: 2px;
   text-align: center;
@@ -240,13 +242,17 @@
   font-size: 16px;
   cursor: pointer;
   font-family: Ubuntu;
+}
+
+.inspector-list__footer-list-button {
+  @extend %list-button;
 
   &:hover {
     background-color: $light-grey;
   }
 
   &--primary {
-    @extend .inspector-list__footer-list-button;
+    @extend %list-button;
     background: $brand-color;
     color: $white;
     border: 1px solid $brand-color;
@@ -255,6 +261,12 @@
       background-color: darken($brand-color, 10%);
     }
   }
+}
+
+.inspector-list__list-button {
+  @extend %list-button;
+  padding: 5px 10px;
+  width: auto;
 }
 
 .inspector-list__footer-switch {
@@ -266,10 +278,10 @@
 
 .unit-list {
   .inspector-list__footer.js__toggle--confirm {
-    background: white;
-    border-top: 1px solid $light-grey;
+    background: $white;
+    box-shadow: 0 1px 4.95px .05px rgba(51, 51, 51, .2);
     transition: transform .3s;
-    transform: translateY(-63px);
+    transform: translateY(-60px);
 
     &.is-hidden {
       transform: translateY(0);

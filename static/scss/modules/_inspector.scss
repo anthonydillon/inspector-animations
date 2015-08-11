@@ -65,7 +65,7 @@
 .inspector {
   @extend %proto-center;
   display: block;
-  height: 600px;
+  height: 500px;
   width: 295px;
 }
 
@@ -80,7 +80,7 @@
 .inspector-list__content {
   overflow: hidden;
   overflow-y: auto;
-  max-height: 500px;
+  max-height: 400px;
 }
 
 .inspector-list__wrapper {
