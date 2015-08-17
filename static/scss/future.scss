@@ -1,0 +1,76 @@
+.future {
+  display: none;
+
+  &__button {
+    background-color: $uncommitted;
+    border-radius: 50%;
+    color: $white;
+    padding: 11px 13px 10px;
+    display: inline-block;
+    box-shadow: 0 1px 4.85px .15px rgba(0, 0, 0, 0.2);
+    float: right;
+    margin-right: -80px;
+    width: 27px;
+    padding-right: 9px;
+    position: relative;
+    transition: background-color .2s,
+                box-shadow .2s;
+
+    &:hover {
+      background-color: darken($uncommitted, 10%);
+      box-shadow: 0 1px 4.85px .15px rgba(0, 0, 0, 0.2);
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &:after {
+      content: "Jump to the future";
+      opacity: 0;
+      background-color: $cool-grey;
+      padding: 4px 8px;
+      color: $white;
+      display: block;
+      position: absolute;
+      right: -160px;
+      top: 10px;
+      transition: opacity .2s;
+      border-radius: 2px;
+      box-shadow: 0 2px 4.85px .5px rgba(0, 0, 0, 0.3);
+    }
+
+    &.is-active {
+      &:after {
+        content: "Go back to the past"
+      }
+      .future__button-image {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__button-image {
+    transform: rotate(-90deg);
+    transition: transform .4s ease-out;
+  }
+
+  &__button-help-text {
+    opacity: 0;
+    background-color: $cool-grey;
+    padding: 4px;
+    color: $white;
+    display: block;
+    position: absolute;
+    right: -150px;
+    top: 10px;
+    transition: opacity .2s;
+  }
+}
+
+.on__relations-listing,
+.on__future-relations-listing {
+  .future {
+    display: block;
+  }
+}

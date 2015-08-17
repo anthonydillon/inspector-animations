@@ -12,6 +12,7 @@ function init() {
 		toErrorList = document.getElementsByClassName("js__to--error-list"),
 		toConfigureList = document.getElementsByClassName("js__to--configure-list"),
 		toRelationsList = document.getElementsByClassName("js__to--relations-list"),
+		toFutureRelationsList = document.getElementsByClassName("js__to--future-relations-list"),
 		toActionsList = document.getElementsByClassName("js__to--actions-list"),
 		toBackupList = document.getElementsByClassName("js__to--backup-list"),
 		toVersionList = document.getElementsByClassName("js__to--version-list"),
@@ -225,8 +226,6 @@ function init() {
 		inspector.className = 'inspector on__unit-details-listing--uncommited';
 	};
 
-
-
 	var staggerAnimation = function (e) {
 		if (e.target.checked) {
 			animationStaggered = true;
@@ -272,6 +271,10 @@ function init() {
 		toRelationsList[i].addEventListener('click', showRelationsList, false);
 	}
 
+	for (var i = 0; i < toFutureRelationsList.length; i++) {
+		toFutureRelationsList[i].addEventListener('click', showFutureRelationsList, false);
+	}
+
 	for (var i = 0; i < toActionsList.length; i++) {
 		toActionsList[i].addEventListener('click', showActionsList, false);
 	}
@@ -313,10 +316,11 @@ function setupToggles() {
 	var show = null;
 
 	for (var i = 0; i < toggles.length; i++) {
-		toggles[i].addEventListener('click', function() {
+		toggles[i].addEventListener('click', function(e) {
 			if (this.dataset.show && this.dataset.hide) {
-				document.getElementsByClassName(this.dataset.show)[0].classList.remove('is-hidden');
-				document.getElementsByClassName(this.dataset.hide)[0].classList.add('is-hidden');
+				document.getElementsByClassName(this.dataset.show)[0].classList.toggle('is-hidden');
+				document.getElementsByClassName(this.dataset.hide)[0].classList.toggle('is-hidden');
+				this.classList.toggle('is-active');
 			} else {
 				console.warn('Toggle missing show and hide data attributes');
 			}
