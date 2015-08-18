@@ -327,8 +327,11 @@ function setupInputs() {
 
 // Checks the input value only contains numbers
 function validateNumber(input) {
-	input.addEventListener('keydown', function(e) {
+	input.addEventListener('keyup', function(e) {
 		input.className = "";
+		if(input.value != '') {
+			input.classList.add('unsaved');
+		}
 	});
 
 	input.addEventListener('blur', function(e) {
@@ -342,8 +345,11 @@ function validateNumber(input) {
 
 // Checks the input value has at least on letter
 function validateString(input) {
-	input.addEventListener('keydown', function(e) {
+	input.addEventListener('keyup', function(e) {
 		input.className = "";
+		if(input.value != '') {
+			input.classList.add('unsaved');
+		}
 	});
 
 	input.addEventListener('blur', function(e) {

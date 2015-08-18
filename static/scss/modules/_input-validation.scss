@@ -70,4 +70,10 @@ input[type="number"] {
 			content: "";
 		}
 	}
+
+	&.unsaved {
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16.000017 16.000017"><path d="M9 3.928q0 .935-.177 1.803-.156.846-.334 1.76.8-.446 1.58-.87.778-.422 1.69-.733l.134-.045.623 1.87-.178.066q-.89.334-1.78.445-.89.09-1.826.156.734.622 1.38 1.223.645.578 1.2 1.357l.112.156-1.624 1.134-.09-.133q-.533-.8-.934-1.58L8 8.89q-.4.846-.8 1.647-.38.78-.914 1.58l-.09.133-1.623-1.134.11-.156q.558-.78 1.203-1.357.645-.6 1.38-1.224-.935-.068-1.825-.157-.89-.11-1.78-.445l-.177-.067.623-1.868.133.045q.912.31 1.69.734.78.424 1.58.87-.178-.914-.356-1.76-.156-.867-.156-1.802V3.75H9v.178z" style="line-height:125%;-inkscape-font-specification:Ubuntu;text-align:center" font-size="22.251" font-family="Ubuntu" letter-spacing="0" word-spacing="0" text-anchor="middle" fill="#df382c"/><path color="#000" overflow="visible" fill="none" d="M0 0h16v16H0z"/></svg>');
+		background-position: 95% center;
+		background-repeat: no-repeat;
+	}
 }
