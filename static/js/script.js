@@ -308,6 +308,51 @@ function init() {
 	}
 
 	setupToggles();
+	setupInputs();
+}
+
+function setupInputs() {
+	var inputs = document.querySelectorAll("input");
+	for (var i = 0; i < inputs.length; i++) {
+		switch (inputs[i].type) {
+			case 'text':
+				validateString(inputs[i]);
+			break;
+			case 'number':
+				validateNumber(inputs[i]);
+			break;
+		}
+	}
+}
+
+// Checks the input value only contains numbers
+function validateNumber(input) {
+	input.addEventListener('keydown', function(e) {
+		input.className = "";
+	});
+
+	input.addEventListener('blur', function(e) {
+		if (input.required && input.value == '') {
+			input.classList.add('has-error--empty');
+		} else if (!/[0-9]/i.test(input.value) && !input.value == '') {
+			input.classList.add('has-error--number');
+		}
+	});
+}
+
+// Checks the input value has at least on letter
+function validateString(input) {
+	input.addEventListener('keydown', function(e) {
+		input.className = "";
+	});
+
+	input.addEventListener('blur', function(e) {
+		if (input.required && input.value == '') {
+			input.classList.add('has-error--empty');
+		} else if (!/[a-z]/i.test(input.value) && !input.value == '') {
+			input.classList.add('has-error--string');
+		}
+	});
 }
 
 function setupToggles() {

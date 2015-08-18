@@ -630,15 +630,20 @@
 							<div class="inspector-list__wrapper">
 								<h3>Rename unit</h3>
 								<input type="text" placeholder="mediawiki" />
+								<span class="error-message"></span>
 								<input type="text" placeholder="Import config file..." />
+								<span class="error-message"></span>
 								<h3>tuning-level (string)</h3>
 								<input type="text" placeholder="Fast (uncommitted)" />
+								<span class="error-message"></span>
 								<p class="help-text">Valid values are 'safest', 'fast', 'and unsafe'. If set to safest, all settings are tuned to have maximum safety at the cost of performance. Fast will turn off most controls, but may lose data on crashes. Unsafe will turn off all protections.</p>
 								<h3>query-cache-size (int)</h3>
-								<input type="text" placeholder="-1" />
+								<input type="number" placeholder="-1" />
+								<span class="error-message"></span>
 								<p class="help-text">Override the command version from dataset-size. Still works if query-cache-type is "OFF" since sessions an override the cache type setting on their own.</p>
 								<h3>query-cache-type (string)</h3>
 								<input type="text" placeholder="OFF" />
+								<span class="error-message"></span>
 								<p class="help-text">Query cache is usually a good idea, but can hurt concurrency. Valid values  are "OFF", "ON" or "DEMAND". <a href="http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html#sysvar_query_cache_type">http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html#sysvar_query_cache_type</a>.</p>
 							</div>
 						</div>
@@ -737,7 +742,8 @@
 						<div class="inspector-list__content">
 							<div class="inspector-list__wrapper">
 								<p>File name:</p>
-								<input type="text" placeholder="e.g. 2015-04-announce.tgz" />
+								<input type="text" placeholder="e.g. 2015-04-announce.tgz" required />
+								<span class="error-message"></span>
 								<p class="help-text--disabled">Backup will be stored in /var/lib/mediawiki/backups</p>
 								<p class="help-text"><a href="#">More help for backup</a></p>
 							</ul>

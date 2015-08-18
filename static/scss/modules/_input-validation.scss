@@ -1,0 +1,73 @@
+%input-error {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16.000017 16.000017"><g transform="translate(-952 -196.362)" color="#000"><path overflow="visible" fill="none" d="M952 196.362h16v16h-16z"/><circle cx="960" cy="204.362" r="7.25" overflow="visible" fill="#df382c" stroke="#df382c" stroke-width="1.5" stroke-dashoffset=".8"/><path d="M957 201.362l6 6M963 201.362l-6 6" overflow="visible" fill="none" stroke="#fff" stroke-width="1.5" stroke-dashoffset=".8"/></g></svg>');
+	background-position: 95% center;
+	background-repeat: no-repeat;
+
+	+ .error-message {
+		display: block;
+	}
+}
+
+.error-message {
+	margin-top: -15px;
+}
+
+.error-message:after {
+	background: $error;
+	border-radius: 4px;
+	display: block;
+	padding: 10px;
+	color: $white;
+	position: relative;
+	top: -12px;
+}
+
+.error-message:before {
+	position: relative;
+	top: -16px;
+	left: 5px;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid $error;
+}
+
+input[type="text"],
+input[type="number"] {
+	&.has-error--number {
+		@extend %input-error;
+
+		+ .error-message:after {
+			content: "This needs to be a number"
+		}
+
+		+ .error-message:before {
+			content: "";
+		}
+	}
+
+	&.has-error--string {
+		@extend %input-error;
+
+		+ .error-message:after {
+			content: "This needs to contain a letter"
+		}
+
+		+ .error-message:before {
+			content: "";
+		}
+	}
+
+	&.has-error--empty {
+		@extend %input-error;
+
+		+ .error-message:after {
+			content: "This field is empty"
+		}
+
+		+ .error-message:before {
+			content: "";
+		}
+	}
+}
