@@ -316,24 +316,30 @@ function setupInputs() {
 	for (var i = 0; i < inputs.length; i++) {
 		switch (inputs[i].type) {
 			case 'text':
+				unsavedListener(inputs[i]);
 				validateString(inputs[i]);
 			break;
 			case 'number':
+				unsavedListener(inputs[i]);
 				validateNumber(inputs[i]);
 			break;
 		}
 	}
 }
 
-// Checks the input value only contains numbers
-function validateNumber(input) {
+function unsavedListener(input) {
 	input.addEventListener('keyup', function(e) {
 		input.className = "";
 		if(input.value != '') {
 			input.classList.add('unsaved');
 		}
-	});
 
+		input.closest(".inspector-list").classList.add('has-unsaved');
+	});
+}
+
+// Checks the input value only contains numbers
+function validateNumber(input) {
 	input.addEventListener('blur', function(e) {
 		if (input.required && input.value == '') {
 			input.classList.add('has-error--empty');
@@ -345,13 +351,6 @@ function validateNumber(input) {
 
 // Checks the input value has at least on letter
 function validateString(input) {
-	input.addEventListener('keyup', function(e) {
-		input.className = "";
-		if(input.value != '') {
-			input.classList.add('unsaved');
-		}
-	});
-
 	input.addEventListener('blur', function(e) {
 		if (input.required && input.value == '') {
 			input.classList.add('has-error--empty');

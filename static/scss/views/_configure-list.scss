@@ -1,0 +1,21 @@
+.configure-list {
+
+	.inspector-list__footer {
+		transform: translateY(50px);
+    transition: transform .3s;
+	}
+
+	.inspector-list__content {
+		max-height: 460px;
+	}
+
+	&.has-unsaved {
+		.inspector-list__footer {
+			transform: translateY(0);
+		}
+
+		.inspector-list__content {
+			max-height: 400px;
+		}
+	}
+}
