@@ -1,5 +1,6 @@
 
-.inspector-list__list {
+.inspector-list__list,
+.inspector-list__list--data {
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -132,6 +133,10 @@
   .inspector-list__notify--neutral {
     float: right;
   }
+}
+
+.inspector-list__list--data .inspector-list__list-item:hover {
+  background-color: transparent;
 }
 
 .inspector-list__list-item--heading {
