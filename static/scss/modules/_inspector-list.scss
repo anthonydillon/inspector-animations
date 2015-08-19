@@ -93,13 +93,29 @@
   }
 
   .inspector-list__controls-list {
-    transition: opacity .3s;
-    opacity: 0;
     position: relative;
     top: 4px;
     list-style: none;
     padding-left: 0;
     float: right;
+
+    .inspector-list__controls-list-item {
+      transition: opacity .3s;
+      opacity: 0;
+
+      &.js__toggle--service-hide-1,
+      &.js__toggle--service-hide-2,
+      &.js__toggle--service-hide-3,
+      &.js__toggle--service-hide-4,
+      &.js__toggle--service-hide-5,
+      &.js__toggle--highlight-hide-1,
+      &.js__toggle--highlight-hide-2,
+      &.js__toggle--highlight-hide-3,
+      &.js__toggle--highlight-hide-4,
+      &.js__toggle--highlight-hide-5 {
+        opacity: 1;
+      }
+    }
   }
 
   .inspector-list__controls-list-item {
@@ -171,7 +187,7 @@
       display: block;
     }
 
-    .inspector-list__controls-list {
+    .inspector-list__controls-list-item {
       opacity: 1;
     }
 
