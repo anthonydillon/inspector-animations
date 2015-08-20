@@ -20,6 +20,7 @@ function init() {
 		toUnitDetailsListPending = document.getElementsByClassName("js__to--unit-details-list--pending"),
 		toUnitDetailsListUncommited = document.getElementsByClassName("js__to--unit-details-list--uncommited"),
 		toUnitsList = document.getElementsByClassName("js__to--units-list"),
+		toCheckAll = document.getElementsByClassName("js__check-all"),
 		animationSwitcher = document.getElementById("animation-switcher"),
 		animationStagger = document.getElementById("animation-stagger");
 
@@ -307,6 +308,10 @@ function init() {
 		toUnitDetailsListUncommited[i].addEventListener('click', showUnitDetailsListUncommited, false);
 	}
 
+	for (var i = 0; i < toCheckAll.length; i++) {
+		toCheckAll[i].addEventListener('click', checkAllHandler, false);
+	}
+
 	setupToggles();
 	setupInputs();
 }
@@ -324,6 +329,15 @@ function setupInputs() {
 				validateNumber(inputs[i]);
 			break;
 		}
+	}
+}
+
+function checkAllHandler(e) {
+	var id = e.target.dataset.checkId;
+	var isChecked = e.target.checked;
+	var checkboxsToToggle = document.getElementsByClassName('js__check-all--' + id);
+	for (var i = 0; i < checkboxsToToggle.length; i++) {
+		checkboxsToToggle[i].checked = isChecked;
 	}
 }
 
