@@ -381,6 +381,8 @@ function setupToggles() {
 
 	for (var i = 0; i < toggles.length; i++) {
 		toggles[i].addEventListener('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
 			if (this.dataset.show && this.dataset.hide) {
 				document.getElementsByClassName(this.dataset.show)[0].classList.toggle('is-hidden');
 				document.getElementsByClassName(this.dataset.hide)[0].classList.toggle('is-hidden');
