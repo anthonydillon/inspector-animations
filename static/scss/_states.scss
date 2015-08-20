@@ -128,7 +128,7 @@ $slide-up-stagger-speed: .03s; // Delay before the next item starts to slide in
 $slide-up-distance: 30px; // Offset position to start transition
 
 .animation--stagger {
-  @for $i from 1 through 9 {
+  @for $i from 1 through 20 {
     .inspector-list__list li:nth-child(#{$i}) {
       animation-delay: $slide-in-stagger-speed * $i;
     }

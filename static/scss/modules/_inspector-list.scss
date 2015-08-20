@@ -137,7 +137,7 @@
   }
 
   .inspector-list__notify--uncommited {
-    @extend %notification;
+ r   @extend %notification;
     background-color: $uncommitted;
   }
 
