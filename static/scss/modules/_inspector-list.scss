@@ -280,7 +280,12 @@
   font-family: Ubuntu;
 }
 
-.inspector-list__footer-list-button {
+.inspector-list__button {
+  margin-bottom: 1em;
+}
+
+.inspector-list__footer-list-button,
+.inspector-list__button {
   @extend %list-button;
 
   &:hover {
