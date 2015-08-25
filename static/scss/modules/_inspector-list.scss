@@ -46,7 +46,8 @@
 
 .inspector-list__list-item,
 .inspector-list__list-item--tabbed,
-.inspector-list__list-item--heading {
+.inspector-list__list-item--heading,
+.inspector-list__list-item--heading-bordered {
   padding: 10px 20px;
 
   &:hover {
@@ -167,6 +168,9 @@
 
   &:first-of-type {
     border-top: 0;
+  }
+
+  &-bordered {
     border-bottom: 1px solid $mid-grey;
   }
 
