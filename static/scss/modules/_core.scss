@@ -82,7 +82,11 @@ body {
     word-break:     break-word;
     -webkit-hyphens: auto;
     -moz-hyphens:    auto;
-    hyphens:         auto
+    hyphens:         auto;
+
+    &.external-link:hover {
+      text-decoration: underline;
+    }
   }
 
   button {
